@@ -1,14 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Las Orquideas Hotel CR</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="src/main/resources/static/css/estilos.css"
-    />
+    <link rel="stylesheet" type="text/css" href="estilos.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #2e8b57;
+        padding: 10px;
+      }
+
+      .logo-header h1 {
+        color: white;
+        margin: 0;
+      }
+
+      .estilo-header-menu {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .estilo-header-menu-link {
+        color: white;
+        text-decoration: none;
+      }
+
+      .portada-section {
+        background-image: url('images/portada.jpg');
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .portada-btn {
+        background-color: #2e8b57;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .aside-section {
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .reserva {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .reserva img {
+        width: 100%;
+        height: auto;
+      }
+
+      .comentarios-section img {
+        width: 50px;
+        border-radius: 50%;
+      }
+
+      .publicidad-container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #2e8b57;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      footer input {
+        padding: 5px;
+        margin-top: 10px;
+      }
+
+      footer button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -28,17 +121,16 @@
 
     <section class="portada-section">
       <div class="portada-text">
-        <h2 style="color: white;">Hotel Las Orquideas</h2>
-        <p style="color: blueviolet;">400 metros sur de la iglesia de San Lorenzo de Tarrazú</p>
-        <p style="color: whitesmoke;">Ubicados en medio de las montañas de la zona de Los Santos, lugar de descanso, trato personalizado y amable.</p>
-        <br />
+        <h2>Hotel Las Orquideas</h2>
+        <p>400 metros sur de la iglesia de San Lorenzo de Tarrazú</p>
+        <p>Ubicados en medio de las montañas de la zona de Los Santos, lugar de descanso, trato personalizado y amable.</p>
         <a href="#" class="portada-btn">Reserva ahora</a>
         <a href="#" class="portada-btn">Descubre</a>
       </div>
     </section>
 
     <aside class="aside-section">
-      <h3>Aquí lo que quiero pendiente</h3>
+      <h3>Lo que ofrecemos</h3>
       <ul>
         <li>Comida local y exquisita gastronomía</li>
         <li>Wifi gratis</li>
@@ -52,7 +144,7 @@
       <h2 class="titulo-reserva-habitaciones">Habitaciones</h2>
       <div class="reserva-habitaciones-container">
         <div class="reserva">
-          <img src="src/main/resources/static/img/cabina-home.jpg" alt="habitacion1" />
+          <img src="images/cabina-home.jpg" alt="Cabina" />
           <h3>Cabina</h3>
           <p>Cabina pequeña.</p>
           <a href="#" class="reserva-link">Reservar</a>
@@ -64,7 +156,7 @@
       <article>
         <h2>Comentarios</h2>
         <div class="comentario">
-          <img src="#" alt="usuario1" />
+          <img src="images/usuario1.jpg" alt="Usuario 1" />
           <p>Muy buen servicio.</p>
           <p class="comentario-autor">Usuario 1 - 20/01/2021</p>
         </div>
@@ -74,9 +166,9 @@
     <section class="publicidad-section">
       <h2 class="titulo-publicidad">Publicidad</h2>
       <div class="publicidad-container">
-        <iframe width="560" height="315" src="#" title="Video publicidad" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video publicidad" allowfullscreen></iframe>
         <div class="publicidad-img">
-          <img src="#" alt="publicidad1" />
+          <img src="images/publicidad1.jpg" alt="Publicidad" />
         </div>
       </div>
     </section>
