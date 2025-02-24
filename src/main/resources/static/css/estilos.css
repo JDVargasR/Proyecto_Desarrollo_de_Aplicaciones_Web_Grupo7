@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    background-image: url(#);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header {
+    background-color: #3d932d;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.estilo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.estilo-header .logo-header h1 {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.estilo-header-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.estilo-header-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.estilo-header-menu a:hover {
+    background-color: #90c092;
+}
+
+.portada-section {
+    position: relative;
+    height: 100vh;
+}
+
+.portada-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 80px 20px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.portada-img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+
+.portada-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.portada-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.portada-btn {
+    background-color: #ff6600;
+    padding: 12px 30px;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.aside-section {
+    background-color: #1d89c7;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+.aside-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.aside-section ul {
+    list-style: none;
+}
+
+.aside-section li {
+    margin-bottom: 15px;
+}
+
+.aside-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.aside-section a:hover {
+    background-color: #ff6600;
+}
+
+.reserva-habitaciones-section {
+    padding: 50px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    
+}
+
+
+
+.titulo-reserva-habitaciones {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.reserva-habitaciones-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+   
+}
+
+.reserva {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 15px;
+    width: 30%;
+    height: 100%;
+}
+
+
+
+.reserva img {
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio sin distorsionar */
+    width: 100%;
+    border-radius: 15px;
+}
+
+.reserva h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.reserva-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.reserva-link:hover {
+    text-decoration: underline;
+}
+
+.publicidad-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.titulo-publicidad {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.publicidad-container iframe {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.publicidad-img img {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 30%
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 45%;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin: 10px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #ff6600;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
