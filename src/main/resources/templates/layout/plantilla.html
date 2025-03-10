@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Las Orquideas CR</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
+        <script th:src="@{/js/rutinas.js}"></script>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+   <body>
+    <header>
+      <nav class="estilo-header">
+        <a href="#" class="logo-header"><h1>Las Orquideas Hotel CR</h1></a>
+        <div class="estilo-header-menu">
+          <a href="habitaciones.html" class="estilo-header-menu-link">Habitaciones</a>
+          <a href="energias_renovables.html" class="estilo-header-menu-link">Energías Renovables</a>
+          <a href="preguntas_frecuentes.html" class="estilo-header-menu-link">Preguntas Frecuentes</a>
+          <a href="blog.html" class="estilo-header-menu-link">Blog</a>
+          <a href="imagenes.html" class="estilo-header-menu-link">Imágenes</a>
+          <a href="como_llegar.html" class="estilo-header-menu-link">Cómo llegar</a>
+          <a href="contacto.html" class="estilo-header-menu-link">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="portada-section">
+      <div class="portada-text">
+        <h2>Hotel Las Orquideas</h2>
+        <p>400 metros sur de la iglesia de San Lorenzo de Tarrazú</p>
+        <p>Ubicados en medio de las montañas de la zona de Los Santos, lugar de descanso, trato personalizado y amable.</p>
+        <a href="#" class="portada-btn">Reserva ahora</a>
+        <a href="#" class="portada-btn">Descubre</a>
+      </div>
+    </section>
+
+    <aside class="aside-section">
+      <h3>Lo que ofrecemos</h3>
+      <ul>
+        <li>Comida local y exquisita gastronomía</li>
+        <li>Wifi gratis</li>
+        <li>Servicio de limpieza</li>
+      </ul>
+    </aside>
+
+    <section class="imagenes-section"></section>
+
+    <section class="reserva-habitaciones-section">
+      <h2 class="titulo-reserva-habitaciones">Habitaciones</h2>
+      <div class="reserva-habitaciones-container">
+        <div class="reserva">
+          <img src="images/cabina-home.jpg" alt="Cabina" />
+          <h3>Cabina</h3>
+          <p>Cabina pequeña.</p>
+          <a href="#" class="reserva-link">Reservar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="comentarios-section">
+      <article>
+        <h2>Comentarios</h2>
+        <div class="comentario">
+          <img src="images/usuario1.jpg" alt="Usuario 1" />
+          <p>Muy buen servicio.</p>
+          <p class="comentario-autor">Usuario 1 - 20/01/2021</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="publicidad-section">
+      <h2 class="titulo-publicidad">Publicidad</h2>
+      <div class="publicidad-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video publicidad" allowfullscreen></iframe>
+        <div class="publicidad-img">
+          <img src="images/publicidad1.jpg" alt="Publicidad" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Síguenos en Redes Sociales</h3>
+          <ul>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Reserva Ahora</h3>
+          <form>
+            <input type="email" placeholder="Tu correo electrónico" required />
+            <button type="submit">Solicitar Información</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-btn">
+        <p>&copy; 2025 Las Orquideas Hotel CR. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
