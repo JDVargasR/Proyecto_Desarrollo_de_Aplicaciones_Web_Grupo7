@@ -1,98 +1,268 @@
+/* 
+    Created on : 11 mar 2025, 11:55:33 a. m.
+    Author     : josed
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
-  body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
 
-      header {
-        background-color: #2e8b57;
-        padding: 10px;
-      }
+body{
+    background-color: #FFFFFF;
+}
 
-      .logo-header h1 {
-        color: white;
-        margin: 0;
-      }
+.header{
+    background-color: #6b8e23;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
 
-      .estilo-header-menu {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-      }
+.header .logo{
+    cursor: pointer;
+}
 
-      .estilo-header-menu-link {
-        color: white;
-        text-decoration: none;
-      }
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
 
-      .portada-section {
-        background-image: url('images/portada.jpg');
-        background-size: cover;
-        color: white;
-        text-align: center;
-        padding: 100px 20px;
-      }
+.header .logo img:hover{
+    transform: scale(1.1);
+}
 
-      .portada-btn {
-        background-color: #2e8b57;
-        color: white;
-        padding: 10px 20px;
-        margin: 10px;
-        text-decoration: none;
-        border-radius: 5px;
-      }
+.header .nav-links{
+    list-style: none;
+}
 
-      .aside-section {
-        background-color: #f5f5f5;
-        padding: 20px;
-      }
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px ;
+}
 
-      .reserva {
-        border: 1px solid #ddd;
-        padding: 10px;
-        margin: 10px;
-      }
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
 
-      .reserva img {
-        width: 100%;
-        height: auto;
-      }
+.header .nav-links a{
+    font-size: 1.2rem;
+    color: #eceff1;
+    text-decoration: none;
+}
 
-      .comentarios-section img {
-        width: 50px;
-        border-radius: 50%;
-      }
+.header .nav-links li a:hover{
+    color: #9b59b6;
+}
 
-      .publicidad-container {
-        display: flex;
-        gap: 20px;
-        padding: 20px;
-      }
+.header .boton button{
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
 
-      footer {
-        background-color: #2e8b57;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
+.header .boton button:hover{
+    background-color: #e2f1f8;
+    color: #9b59b6;
+    transform: scale(1.1);
+}
 
-      footer a {
-        color: white;
-        text-decoration: none;
-      }
+.titulo-principal{
+    background-color: #71b645;
+    color: #FFF;
+    width: 20rem;
+    height: 3rem;
+    margin: auto;
+    border: 1px #71b645 solid;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
 
-      footer input {
-        padding: 5px;
-        margin-top: 10px;
-      }
+.contenedor-titulo{
+    margin-top: 5rem;
+}
 
-      footer button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-      }
+.info-vargas{
+    padding-top: 3rem;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.texto-info{
+    margin: 1px 20px 1px 20px;
+    text-align: justify;
+}
+
+/*Orden del margin (igual para el padding) todo en una sola línea arriba, derecha, abajo, izq*/
+.card {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    margin: 50px 150px 200px 150px;
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: #71b645;
+    border-radius: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .frente {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #00000033;
+}
+
+.card .frente img {
+    position: absolute;
+    width: 35%;
+    height: 25%;
+    object-fit: cover;
+    margin-left: 113px;
+    margin-top: 115px;
+}
+
+.card .frente h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .trasera {
+    transform: perspective(600px) rotateY(180deg);
+    background: #014765;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #00000033;
+}
+
+.card .trasera .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .trasera .link a {
+    color: #f3f3f3;
+}
+
+.card .trasera h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .trasera p {
+    letter-spacing: 1px;
+}
+
+.card:hover .frente {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .trasera {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.pie-pagina{
+    width: 100%;
+    background-color: #6b8e23;
+}
+
+.pie-pagina .pie-pagina-superior{
+    width: 100%;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .pie-pagina-superior .contenedor figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .pie-pagina-superior .contenedor figure img{
+    width: 250px;
+}
+
+.pie-pagina .pie-pagina-superior .contenedor h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .pie-pagina-superior .contenedor a{
+    color: #efefef;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.pie-pagina .pie-pagina-superior .contenedor a:hover{
+    color: #9b59b6;
+}
+
+.pie-pagina .pie-pagina-superior .red-social a img{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .pie-pagina-superior .red-social a:hover{
+    color: aqua;
+}
+
+.pie-pagina .pie-pagina-inferior{
+    background-color: #9b59b6;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .pie-pagina-inferior small{
+    font-size: 15px;
+}
+
+.separadores{
+    color: #FFF;
+}

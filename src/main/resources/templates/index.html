@@ -5,10 +5,57 @@
     <head th:replace="~{layout/plantilla :: head}">
         <title>Proyecto - Grupo #7</title>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
-        
+
+        <section>
+            <div class="card">
+                <div class="face frente">
+                    <img src="Img's/mision.png" alt="Misión"/>
+                    <h3>Misión</h3>
+                </div>
+                <div class="face trasera">
+                    <h3>Misión</h3>
+                    <p>Proporcionar soluciones integrales en climatización, ofreciendo productos y servicios de alta calidad. Nos esforzamos por ser líderes en el mercado, combinando innovación, profesionalismo y un trato cercano y honesto.</p>
+                    <div class="link">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face frente">
+                    <img src="Img's/vision.png" alt="Visión"/>
+                    <h3>Visión</h3>
+                </div>
+                <div class="face trasera">
+                    <h3>Visión</h3>
+                    <p>Ser reconocidos como la empresa líder en climatización a nivel regional, destacándonos por nuestra excelencia en el servicio, la innovación tecnológica y el compromiso con el medio ambiente.</p>
+                    <div class="link">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face frente">
+                    <img src="Img's/barritas.png" alt="Valores"/>
+                    <h3>Valores</h3>
+                </div>
+                <div class="face trasera">
+                    <h3>Valores</h3>
+                    <p>
+                        Calidad <br/>
+                        Honestidad <br/>
+                        Innovación <br/>
+                        Compromiso <br/>
+                        Responsabilidad <br/>
+                        Compañerismo
+                    </p>
+                    <div class="link">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>
