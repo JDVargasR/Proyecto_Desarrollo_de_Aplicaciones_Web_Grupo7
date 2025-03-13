@@ -10,101 +10,134 @@
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
 
-        
-        
-           <!-- esta es el main-section aca esta la portada -->
+
+
+        <!-- esta es el main-section aca esta la portada -->
         <section class="main-section">
             <div class="hero-text">
                 <h2 style="color: white">Hotel las Horquideas</h2>
                 <p style="color: blueviolet">400 metros sur de la iglesia de San Lorenzo de Tarrazu</p>
                 <p style="color: white">Ubicados en medio de las montañas de la zona de los Santos , lugar 
-                de descanso , trato personalizado y amable</p>
-                    <a href="#" class="hero-btn">RESERVA AHORA</a>
-                    <a href="#" class="hero-btn">DESCUBRE</a>
+                    de descanso , trato personalizado y amable</p>
+                <a href="#" class="hero-btn">RESERVA AHORA</a>
+                <a href="#" class="hero-btn">DESCUBRE</a>
             </div>
         </section>
-        
+
+
+
+
         <!-- esta es la seccion "descubre el encanto de nuestro hotel" -->
-<section class="descubre-encanto-section">
-    <h2>Descubre el encanto de nuestro hotel</h2>
-    <div class="imagenes">
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto1.jpg}" alt="Descubre">
-            <p>Descubre</p>
-        </div>
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto2.jpg}" alt="Explora">
-            <p>Explora</p>
-        </div>
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto3.jpg}" alt="Descanso">
-            <p>Descanso</p>
-        </div>
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto4.jpg}" alt="Instalaciones">
-            <p>Instalaciones</p>
-        </div>
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto5.jpg}" alt="Naturaleza">
-            <p>Naturaleza</p>
-        </div>
-        <div class="imagen-container">
-            <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto6.jpg}" alt="Actividades">
-            <p>Actividades</p>
-        </div>
-    </div>
-</section>
-       
-<!-- esta es la seccion "habitaciones" me permite reservar desde el home -->
-<section class="section-habitaciones">
-    <h2 class="section-habitaciones-title">Reservar</h2>
-    <div class="section-habitaciones-container">
-        <div class="habitacion">
-            <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionescabina.jpg" alt="Cabina">
-            <h3>Cabina</h3>
-            <p>"Una acogedora cabina ideal para disfrutar de la tranquilidad y la privacidad. Perfecta para una estancia cómoda y relajante."</p>
-            <a href="#" class="habitacion-link">Reservar</a>
-        </div>
-        <div class="habitacion">
-            <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionesestudio.jpg" alt="Estudio">
-            <h3>Estudio</h3>
-            <p>"Un estudio moderno con todo lo necesario para tu comodidad. Perfecto para estancias más largas o quienes prefieren un espacio independiente."</p>
-            <a href="#" class="habitacion-link">Reservar</a>
-        </div>
-        <div class="habitacion">
-            <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionesvilla.jpg" alt="Villa">
-            <h3>Villa</h3>
-            <p>"Disfruta de la amplitud y lujo de nuestra villa, con todas las comodidades para una estancia inolvidable con vistas espectaculares."</p>
-            <a href="#" class="habitacion-link">Reservar</a>
-        </div>
-        <div class="habitacion">
-            <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionescasafamiliar.jpg" alt="Casa Familiar">
-            <h3>Casa Familiar</h3>
-            <p>"Nuestra Casa Familiar es ideal para grupos grandes o familias, con amplios espacios y todas las comodidades para tu confort y disfrute."</p>
-            <a href="#" class="habitacion-link">Reservar</a>
-        </div>
-    </div>
-</section>
+        <section class="descubre-encanto-section">
+            <h2>Descubre el encanto de nuestro hotel</h2>
+            <div class="imagenes">
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto1.jpg}" alt="Descubre">
+                        <p>Descubre</p>
+                </div>
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto2.jpg}" alt="Explora">
+                        <p>Explora</p>
+                </div>
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto3.jpg}" alt="Descanso">
+                        <p>Descanso</p>
+                </div>
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto4.jpg}" alt="Instalaciones">
+                        <p>Instalaciones</p>
+                </div>
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto5.jpg}" alt="Naturaleza">
+                        <p>Naturaleza</p>
+                </div>
+                <div class="imagen-container">
+                    <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto6.jpg}" alt="Actividades">
+                        <p>Actividades</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- esta es la seccion "habitaciones" me permite reservar desde el home -->
+        <section class="section-habitaciones">
+            <h2 class="section-habitaciones-title">Reservar</h2>
+            <div class="section-habitaciones-container">
+                <div class="habitacion">
+                    <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionescabina.jpg" alt="Cabina">
+                        <h3>Cabina</h3>
+                        <p>"Una acogedora cabina ideal para disfrutar de la tranquilidad y la privacidad. Perfecta para una estancia cómoda y relajante."</p>
+                        <a href="#" class="habitacion-link">Reservar</a>
+                </div>
+                <div class="habitacion">
+                    <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionesestudio.jpg" alt="Estudio">
+                        <h3>Estudio</h3>
+                        <p>"Un estudio moderno con todo lo necesario para tu comodidad. Perfecto para estancias más largas o quienes prefieren un espacio independiente."</p>
+                        <a href="#" class="habitacion-link">Reservar</a>
+                </div>
+                <div class="habitacion">
+                    <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionesvilla.jpg" alt="Villa">
+                        <h3>Villa</h3>
+                        <p>"Disfruta de la amplitud y lujo de nuestra villa, con todas las comodidades para una estancia inolvidable con vistas espectaculares."</p>
+                        <a href="#" class="habitacion-link">Reservar</a>
+                </div>
+                <div class="habitacion">
+                    <img src="Img's/Imagenes Home/section habitaciones//sectionhabitacionescasafamiliar.jpg" alt="Casa Familiar">
+                        <h3>Casa Familiar</h3>
+                        <p>"Nuestra Casa Familiar es ideal para grupos grandes o familias, con amplios espacios y todas las comodidades para tu confort y disfrute."</p>
+                        <a href="#" class="habitacion-link">Reservar</a>
+                </div>
+            </div>
+        </section>
 
 
-<section class="section-testimonios">
-    <h2 class="section-testimonios-title">Lo que dicen Nuestros Clientes</h2>
-    <div class="testimonio">
-        <p>"Un lugar increíble para relajarse y disfrutar de la naturaleza."</p>
-        <h4>Francisco Castillo Calderón</h4>
-    </div>
-    <div class="testimonio">
-        <p>"Servicio excepcional y habitaciones muy cómodas."</p>
-        <h4>Francisco Castillo Calderón</h4>
-    </div>
-    <div class="testimonio">
-        <p>"Definitivamente volveré. ¡Una experiencia maravillosa!"</p>
-        <h4>Francisco Castillo Calderón</h4>
-    </div>
-</section>
+ <!-- esta es la seccion "testimonios usa boostrap" -->
+        <section class="section-testimonios">
+            <h2 class="section-testimonios-title">Lo que dicen nuestros clientes</h2>
+            <div class="accordion" id="accordionTestimonios">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioUno" aria-expanded="true" aria-controls="testimonioUno">
+                            "Un paraíso escondido en las montañas"
+                        </button>
+                    </h2>
+                    <div id="testimonioUno" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            "Desde el momento en que llegamos, nos sentimos en casa. La calidez del personal y la belleza del entorno nos hicieron olvidar el estrés de la ciudad. Fue una experiencia que nunca olvidaremos."
+                            <br><strong>- Francisco Castillo Calderón</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioDos" aria-expanded="false" aria-controls="testimonioDos">
+                            "Servicio excepcional y habitaciones de ensueño"
+                        </button>
+                    </h2>
+                    <div id="testimonioDos" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            "Cada detalle en este hotel está pensado para brindar la mejor experiencia. Las habitaciones son amplias, limpias y con una vista espectacular. El servicio del personal es simplemente inigualable."
+                            <br><strong>- Carolina Méndez</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioTres" aria-expanded="false" aria-controls="testimonioTres">
+                            "Una experiencia inolvidable"
+                        </button>
+                    </h2>
+                    <div id="testimonioTres" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            "Pasamos un fin de semana increíble rodeados de naturaleza y tranquilidad. Los jardines, la piscina y la comida superaron nuestras expectativas. Sin duda, volveremos pronto."
+                            <br><strong>- Alejandro Ramírez</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-        
+
         <!-- esta parte es la seccion de mvv (cartas de mision , vision y valores -->
         <section class="mvv-section">
             <div class="card">
@@ -151,12 +184,12 @@
                 </div>
             </div>
         </section>
-        
-        
-                <section class="multimedia-section">
+
+
+        <section class="multimedia-section">
             <h2 class="section-title">Publicidad</h2>
             <div class="multimedia-container">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/P8LnuTtUPQM?si=Yn6QVNF6eeFJXs7-&end=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/P8LnuTtUPQM?si=Yn6QVNF6eeFJXs7-&end=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="gallery">
                     <img src="Img's/Imagenes Home/multimediasection/multimedia1.jpg" alt="multimedia1" />
 
@@ -167,7 +200,7 @@
             </div>
         </section>
 
-        
+
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>
