@@ -16,7 +16,7 @@
     <body>
         <header class="header">
             <div class="logo">
-                <a href="Index.html"><img src="Img's/Logo_Orquideas.png" alt="Logo Orquideas"/></a>
+                <a th:href="@{/}"><img th:src="@{/Img's/Logo_Orquideas.png}" alt="Logo Orquideas"/></a>
             </div>
             <nav>
                 <ul class="nav-links">
@@ -24,7 +24,7 @@
                     <li><a href="energias_renovables.html" class="nav-menu-link">Energias Renovables</a></li>
                     <li><a href="preguntas_frecuentes.html" class="nav-menu-link">Preguntas Frecuentes</a></li>
                     <li><a href="blog.html" class="nav-menu-link">Blog</a></li>
-                    <li><a th:href="@{/imagenes}">Imágenes</a></li>
+                    <li><a th:href="@{/templates/imagenes}">Imágenes</a></li>
                 </ul>            
             </nav>
             <a class="boton" href="contacto.html"><button>Contacto</button></a>
@@ -35,8 +35,8 @@
             <div class="pie-pagina-superior">
                 <div class="contenedor">
                     <figure>
-                        <a href="#">
-                            <img src="Img's/Logo_Orquideas.png" alt="Logo Orquideas"/>
+                        <a th:href="@{/}">
+                            <img th:src="@{/Img's/Logo_Orquideas.png}" alt="Logo Orquideas"/>
                         </a>
                     </figure>
                 </div>
