@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Proyecto - Grupo #7</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- esta es el main-section aca esta la portada -->
+        <section class="main-section" style="background-image: url(/static/Img%27s/FondoDesenfocado.jpg) ">
+            <div class="hero-text">
+                <h2 style="color: white">Preguntas Frecuentes</h2>
+            </div>
+        </section>
+
+
+        <!-- esta es la seccion "descubre el encanto de nuestro hotel" -->
+        <section class="section-testimonios">
+            <h2 class="section-testimonios-title">Informate mas sobre nuestro hotel</h2>
+            <div class="accordion" id="accordionTestimonios">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioUno" aria-expanded="true" aria-controls="testimonioUno">
+                            ¿De cuantas personas es la casa familiar?
+                        </button>
+                    </h2>
+                    <div id="testimonioUno" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            Es para 10 personas.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioDos" aria-expanded="false" aria-controls="testimonioDos">
+                            ¿Cuanto es el precio del estudio por pareja?
+                        </button>
+                    </h2>
+                    <div id="testimonioDos" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Contamos con los precio de 45.000 y con desayuno 50.000. 
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioTres" aria-expanded="false" aria-controls="testimonioTres">
+                            ¿Donde se encuentran ubicados?
+                        </button>
+                    </h2>
+                    <div id="testimonioTres" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Nos encontamos en un pueblito llamado San Lorenzo de Tarrazú.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCuatro" aria-expanded="false" aria-controls="testimonioCuatro">
+                            ¿Aceptan Mascotas?
+                        </button>
+                    </h2>
+                    <div id="testimonioCuatro" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Si, tenemos diferentes habitaciones donde si está permitido.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCinco" aria-expanded="false" aria-controls="testimonioCinco">
+                            ¿Precio de la cabina 6 para una persona?
+                        </button>
+                    </h2>
+                    <div id="testimonioCinco" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            El precio es de 20.000 para una persona y con desayuno 25.000.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>
