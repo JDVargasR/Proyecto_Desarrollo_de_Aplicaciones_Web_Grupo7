@@ -4,10 +4,6 @@
  */
 package com.Proyecto_Grupo7.domain;
 
-/**
- *
- * @author josed
- */
 
 import jakarta.persistence.*;
 import java.io.Serializable;
