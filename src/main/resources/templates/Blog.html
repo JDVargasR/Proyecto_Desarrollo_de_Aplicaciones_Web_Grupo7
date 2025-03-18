@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Proyecto - Grupo #7</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- esta es el main-section aca esta la portada -->
+        <section class="main-section" style="background-image: url(/static/Img's/FondoDesenfocado.jpg)">
+            <div class="hero-text">
+                <h2 style="color: white">Blog</h2>
+            </div>
+        </section>
+
+
+        <!-- esta es la seccion "descubre el encanto de nuestro hotel" -->
+        <section class="section-testimonios">
+            <h2 class="section-testimonios-title">Evangelia Gonzalez visita el hotel Las Orquideas</h2>
+            
+        </section>
+
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>
