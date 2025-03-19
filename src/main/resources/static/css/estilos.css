@@ -537,6 +537,18 @@ body {
     margin-bottom: 15px;
   }
   
+  /* Diseño del título "Evangelia Gonzales" */
+  .containerimageness h2 {
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-size: 2.0em;
+    color: #DA70D6;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  
   /* Descripción debajo del título */
   .descripcion {
     text-align: center;
