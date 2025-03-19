@@ -672,3 +672,16 @@ body {
   background-color: #0056b3;
 }
 /*--------------------------------------------------------------------------*/
+
+.container {
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 50px auto; /* Márgenes para centrar y espaciar */
+}
+
+.row {
+  background-color: #f8f8f8; /* Un fondo sutil para la fila */
+  padding: 30px; /* Espacio dentro de la fila */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  /*border: 2px solid black; /* Borde delineado negro */
+}
