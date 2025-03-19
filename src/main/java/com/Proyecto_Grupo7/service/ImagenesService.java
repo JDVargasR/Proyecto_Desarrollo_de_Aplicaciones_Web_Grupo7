@@ -4,8 +4,9 @@
  */
 package com.Proyecto_Grupo7.service;
 
-import com.Proyecto_Grupo7.domain.Imagenes;
 import java.util.List;
+
+import com.Proyecto_Grupo7.domain.Imagenes;
 
 /**
  *
@@ -25,3 +26,4 @@ public interface ImagenesService {
     // Se elimina el categoria que tiene el id pasado por parámetro
     public void delete(Imagenes imagenes);
 }
+

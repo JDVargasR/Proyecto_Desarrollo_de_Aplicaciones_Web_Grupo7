@@ -4,9 +4,9 @@
  */
 package com.Proyecto_Grupo7.dao;
 
-import com.Proyecto_Grupo7.domain.PreguntasFrecuentes;
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Proyecto_Grupo7.domain.PreguntasFrecuentes;
 
 public interface PreguntasFrecuentesDao extends JpaRepository<PreguntasFrecuentes, Long> {
 
