@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Proyecto - Grupo #7</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- esta es el main-section aca esta la portada -->
+        <section class="main-section" style="background-image: url(/static/Img's/FondoDesenfocado.jpg) ">
+            <div class="hero-text">
+                <h2 style="color: white">Habitaciones</h2>
+            </div>
+        </section>
+
+
+        <!-- esta es la seccion "descubre el encanto de nuestro hotel" -->
+        <section class="section-testimonios">
+            <h2 class="section-testimonios-title">Informate mas sobre nuestro hotel</h2>
+            <div class="accordion" id="accordionTestimonios">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionescabina.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Casa Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionescasafamiliar.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Casa Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionescasafamiliar.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Casa Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionescasafamiliar.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Casa Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionesvilla.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Villa Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center border-dark rounded">
+                            <div class="image-container">
+                                <img th:src="@{\Img's\Imagenes Home\section habitaciones\sectionhabitacionesestudio.jpg}" class="card-img-top custom-img" alt="Imagen">
+                            </div>
+                            <div class="card-body bg-success rounded-bottom custom-body">
+                                <button class="btn btn-light mt-2">Estudio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>
