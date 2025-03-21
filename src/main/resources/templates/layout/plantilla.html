@@ -22,8 +22,8 @@
                 <ul class="nav-links">
                     <li><a th:href="@{/templates/habitaciones}">Habitaciones</a></li>
                     <li><a href="energias_renovables.html" class="nav-menu-link">Energias Renovables</a></li>
-                    <li><a th:href="@{../templates/preguntasFrecuentes}">Preguntas Frecuentes</a></li>
-                    <li><a th:href="@{../templates/blog}">Blog</a></li>
+                    <li><a th:href="@{/templates/preguntasFrecuentes}">Preguntas Frecuentes</a></li>
+                    <li><a th:href="@{/templates/blog}">Blog</a></li>
                     <li><a th:href="@{/templates/imagenes}">Imágenes</a></li>
                 </ul>            
             </nav>
@@ -43,19 +43,19 @@
                 <div class="contenedor">
                     <h2>SOBRE NOSOTROS</h2>
                     <div class="separadores">
-                        <a href="habitaciones.html">Habitaciones</a> | 
+                        <a th:href="@{/templates/habitaciones}">Habitaciones</a> | 
                         <a href="energias_renovables.html">Energias Renovables</a> | 
-                        <a href="preguntas_frecuentes.html">Preguntas Frecuentes</a> <br/> | 
-                        <a href="blog.html">Blog</a> | 
-                        <a href="imagenes.html">Imagenes</a> |
+                        <a th:href="@{/templates/preguntasFrecuentes}">Preguntas Frecuentes</a> <br/> | 
+                        <a th:href="@{/templates/blog}">Blog</a> | 
+                        <a th:href="@{/templates/imagenes}">Imagenes</a> |
                         <a href="contactanos.html">Contactanos</a>
                     </div>
                 </div>  
                 <div class="contenedor">
                     <h2>SIGUENOS</h2>
                     <div class="red-social">
-                        <a href="#"><img th:src="@{/Img's/Whats.png}" alt="WhatsApp Logo"/></a>
-                        <a href="#"><img th:src="@{/Img's/Insta.png}" alt="Instagram Logo"/></a>
+                        <a href="https://wa.me/+50686641703"><img th:src="@{/Img's/Whats.png}" alt="WhatsApp Logo"/></a>
+                        <a href="https://www.instagram.com/hotellasorquideas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img th:src="@{/Img's/Insta.png}" alt="Instagram Logo"/></a>
                         <a href="#/"><img th:src="@{/Img's/Face.png}" alt="Facebook Logo"/></a>
                         <a href="#"><img th:src="@{/Img's/Tiktok.png}" alt="TikTok Logo"/></a>
                     </div>
