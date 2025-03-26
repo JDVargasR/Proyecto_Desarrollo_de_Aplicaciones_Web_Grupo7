@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Proyecto - Grupo #7</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- esta es el main-section aca esta la portada -->
+        <section class="main-section-imagen2">
+            <div class="hero-text">
+                <h2 style="color: white" th:text="${cabina.nombre}">Cabina</h2>
+            </div>
+        </section>
+
+
+        <!-- esta es la seccion "descubre el encanto de nuestro hotel" -->
+        <section class="section-testimonios container mt-4">
+            <div class="row">
+                <!-- Columna izquierda con imagen y nombre -->
+                <div class="col-md-8">
+                    <div class="header-bg mb-3">
+                        <h4 class="mb-0" th:text="${cabina.nombre}">Nombre</h4>
+                        <button class="btn btn-light">Reservar</button>
+                    </div>
+
+                    <div class="img-grid mb-3">
+                        <img th:src="@{${cabina.rutaImagen}}" class="custom-img mb-2" alt="Imagen de Cabina"/>
+                    </div>
+                </div>
+
+                <!-- Columna derecha con información -->
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <p><strong>Información:</strong></p>
+                        <p><strong>Contamos con diferentes opciones:</strong></p>
+                        <ol>
+                            <p th:utext="${#strings.replace(cabina.precio, '\n', '<br/>')}"></p>
+                        </ol>
+                        <p><strong>Cuenta con:</strong></p>
+                        <p th:text="${cabina.descripcion}">Descripción</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

@@ -739,3 +739,25 @@ Para acomodar los cuadros*/
     background-color: #389f0d;
 }
 
+ .custom-imgcabinas {
+            height: 150px;
+            object-fit: cover;
+        }
+        .info-box {
+            border: 1px solid #d1c4e9;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .header-bg {
+            background-color: #e1bee7;
+            padding: 10px 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .img-grid img {
+            width: 100%;
+            border-radius: 5px;
+        }
