@@ -172,7 +172,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -773,4 +773,13 @@ Para acomodar los cuadros*/
 
 .custom-imghabitacion:hover {
     transform: scale(1.02);
+}
+
+.titulos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
