@@ -4,7 +4,6 @@
  */
 package com.Proyecto_Grupo7.domain;
 
-
 import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
@@ -12,7 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "detalle_cabina")
-public class DetalleCabina implements Serializable{
+public class DetalleCabina implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,13 +19,16 @@ public class DetalleCabina implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalle_cabina")
     private long idDetalleCabina;
-    
+
     private String nombre;
     private String descripcion;
     private String precio;
 
     @Column(name = "ruta_imagen")
     private String rutaImagen;
+
+    @Column(name = "galeria_imagenes")
+    private String galeriaImagenes;
 
     private boolean activo;
 

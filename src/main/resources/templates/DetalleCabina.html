@@ -28,19 +28,28 @@
                         <button class="btn btn-light">Reservar</button>
                     </div>
 
-                    <div class="img-grid mb-3">
-                        <img th:src="@{${cabina.rutaImagen}}" class="custom-img mb-2" alt="Imagen de Cabina"/>
+                    <!-- Imagen principal -->
+
+                    <!-- Galería de imágenes adicionales -->
+                    <div class="row g-2 img-grid mb-3" th:if="${cabina.galeriaImagenes != null}">
+                        <div class="col-6" th:each="img : ${cabina.galeriaImagenes.split(',')}">
+                            <img th:src="@{${img}}" class="custom-imghabitacion" alt="Imagen adicional"/>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Columna derecha con información -->
                 <div class="col-md-4">
+                    <br>
+                    <br>   
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <div class="info-box">
                         <p><strong>Información:</strong></p>
                         <p><strong>Contamos con diferentes opciones:</strong></p>
-                        <ol>
-                            <p th:utext="${#strings.replace(cabina.precio, '\n', '<br/>')}"></p>
-                        </ol>
+                        <p th:utext="${#strings.replace(cabina.precio, '\n', '<br/>')}"></p>
                         <p><strong>Cuenta con:</strong></p>
                         <p th:text="${cabina.descripcion}">Descripción</p>
                     </div>
