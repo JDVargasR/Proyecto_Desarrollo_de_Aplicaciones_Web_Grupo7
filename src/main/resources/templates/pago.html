@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Proyecto - Grupo #7</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <!-- Sección principal con imagen -->
+        <section class="main-section-imagen2">
+            <div class="hero-text">
+                <h2 style="color: white" th:text="${cabina.nombre}">Cabina</h2>
+            </div>
+        </section>
+
+        <!-- Sección de información -->
+        <section class="section-testimonios container mt-4">
+            <div class="container mt-5 mb-5">
+
+                <div class="p-4 border rounded" style="border-color: #6A861C;">
+                    <h4 class="text-center mb-4">INFORMACIÓN DE PAGO</h4>
+
+                    <form th:action="@{/guardar-pago}" method="post" th:object="${pago}">
+                        <input type="hidden" th:field="*{reserva.idReserva}" />
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Titular</span>
+                                    <input type="text" class="form-control" th:field="*{nombreTarjeta}" placeholder="Nombre en tarjeta" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Número</span>
+                                    <input type="text" class="form-control" th:field="*{numeroTarjeta}" placeholder="Número de tarjeta" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-text">CVC</span>
+                                    <input type="text" class="form-control" th:field="*{codigoSeguridad}" placeholder="Código de seguridad" required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="mes">Mes</label>
+                                    <select class="form-select" th:field="*{mes}" id="mes" required>
+                                        <option value="">Mes</option>
+                                        <option>Enero</option>
+                                        <option>Febrero</option>
+                                        <option>Marzo</option>
+                                        <option>Abril</option>
+                                        <option>Mayo</option>
+                                        <option>Junio</option>
+                                        <option>Julio</option>
+                                        <option>Agosto</option>
+                                        <option>Septiembre</option>
+                                        <option>Octubre</option>
+                                        <option>Noviembre</option>
+                                        <option>Diciembre</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <label class="input-group-text" for="anio">Año</label>
+                                    <select class="form-select" th:field="*{anio}" id="anio" required>
+                                        <option value="">Año</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-reservar">Total a Pagar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

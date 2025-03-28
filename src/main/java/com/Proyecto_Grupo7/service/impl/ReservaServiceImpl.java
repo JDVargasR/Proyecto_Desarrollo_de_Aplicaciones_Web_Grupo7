@@ -23,4 +23,9 @@ public class ReservaServiceImpl implements ReservaService {
     public List<Reserva> listarReservas() {
         return (List<Reserva>) reservaDao.findAll();
     }
+
+    @Override
+    public Reserva encontrarPorId(Long id) {
+        return reservaDao.findById(id).orElse(null);
+    }
 }

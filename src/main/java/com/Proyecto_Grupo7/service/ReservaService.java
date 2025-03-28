@@ -8,4 +8,6 @@ public interface ReservaService {
     public void guardar(Reserva reserva);
 
     public List<Reserva> listarReservas();
+    
+    public Reserva encontrarPorId(Long id);
 }
