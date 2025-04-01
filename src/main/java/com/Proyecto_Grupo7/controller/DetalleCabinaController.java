@@ -4,7 +4,7 @@
  */
 package com.Proyecto_Grupo7.controller;
 
-import com.Proyecto_Grupo7.service.ImagenesService;
+import com.Proyecto_Grupo7.service.HabitacionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,19 +16,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/templates")
-public class ImagenesController {
+public class HabitacionesController {
     
     @Autowired
-    private ImagenesService imagenesService;
+    private HabitacionesService habitacionesService;
     
-    @GetMapping("/imagenes")
+    @GetMapping("/habitaciones")
     public String listado(Model model) {
-        var lista = imagenesService.getImagenes(false);
-        model.addAttribute("imagenes", lista);
-        model.addAttribute("totalImagenes", lista.size());
-        return "/imagenes";
+        var lista = habitacionesService.getHabitaciones(false);
+        model.addAttribute("habitaciones", lista);
+        model.addAttribute("totalHabitaciones", lista.size());
+        return "/habitaciones";
     }
-    
-    
-    
 }
