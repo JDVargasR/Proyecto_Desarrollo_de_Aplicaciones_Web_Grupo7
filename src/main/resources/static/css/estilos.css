@@ -19,7 +19,7 @@ body {
 
 /* Header */
 .header {
-    background-color: rgba(107, 142, 35, 0.8); /* Fondo con transparencia */
+    background-color: #384F2F; /* Fondo con transparencia */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,7 +85,7 @@ body {
 /* Footer */
 .pie-pagina {
     width: 100%;
-    background-color: rgba(107, 142, 35, 0.8); /* Fondo con transparencia */
+    background-color: #384F2F; /* Fondo con transparencia */
     padding: 20px 0;
 }
 
@@ -136,7 +136,7 @@ body {
 
 .pie-pagina .pie-pagina-inferior {
     background-color: #9b59b6;
-    padding: 15px 10px;
+    padding: 15px 10px 0px 0px;
     text-align: center;
     color: #fff;
 }
@@ -374,9 +374,28 @@ body {
 
 /*aqui van los estilos de testimonios section*/
 
-.section-testimonios-title {
+.section-testimonios h2{
     text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
+
+.section-testimonios h3{
+    text-align: center;
+    font-family: "Arial";
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
 
 .testimonios {
     background: #f8f8f8;
@@ -550,17 +569,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Diseño del título "Evangelia Gonzales" */
-.containerimageness h2 {
-    text-align: center;
-    font-family: "Georgia", serif;
-    font-size: 2.0em;
-    color: #DA70D6;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
 
 /* Descripción debajo del título */
 .descripcion {
@@ -825,4 +833,3 @@ Para acomodar los cuadros*/
     font-size: 25px;
     color: #333;
 }
-

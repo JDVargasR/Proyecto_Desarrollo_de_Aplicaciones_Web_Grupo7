@@ -1,9 +1,6 @@
 
 package com.Proyecto_Grupo7.controller;
 
-import com.Proyecto_Grupo7.domain.Reserva;
-import com.Proyecto_Grupo7.service.DetalleCabinaService;
-import com.Proyecto_Grupo7.service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +9,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Proyecto_Grupo7.domain.Reserva;
+import com.Proyecto_Grupo7.service.DetalleCabinaService;
+import com.Proyecto_Grupo7.service.ReservaService;
 
 @Controller
 @RequestMapping("/templates")
@@ -47,6 +48,8 @@ public class DetalleCabinaController {
         return "redirect:/pago/" + id;
     }
     
-    
-
+    @GetMapping("/pago")
+    public String pagar(Model model) {
+        return "pago"; 
+    }
 }
