@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout/plantilla :: head}">
+      <head th:replace="layout/plantilla :: head(~{::link})">
         <title>Proyecto - Grupo #7</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>

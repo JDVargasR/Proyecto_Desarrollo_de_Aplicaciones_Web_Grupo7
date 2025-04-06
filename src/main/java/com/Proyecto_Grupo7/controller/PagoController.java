@@ -27,10 +27,18 @@ public class PagoController {
         Reserva reserva = reservaService.encontrarPorId(idReserva);
         Pago pago = new Pago();
         pago.setReserva(reserva);
-
+    
         model.addAttribute("pago", pago);
+        model.addAttribute("cabina", reserva.getCabina());
+    
+        // ✅ Calculamos el monto total: precio * cantidad de personas
+        double total = reserva.getCabina().getPrecio() * reserva.getPersonas();
+        model.addAttribute("total", total);
+    
         return "pago";
     }
+    
+    
 
     @PostMapping("/guardar-pago")
     public String guardarPago(@ModelAttribute Pago pago) {

@@ -4,8 +4,14 @@
  */
 package com.Proyecto_Grupo7.domain;
 
-import jakarta.persistence.*;
 import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
@@ -22,7 +28,7 @@ public class DetalleCabina implements Serializable {
 
     private String nombre;
     private String descripcion;
-    private String precio;
+    private double precio;
 
     @Column(name = "ruta_imagen")
     private String rutaImagen;
@@ -35,7 +41,7 @@ public class DetalleCabina implements Serializable {
     public DetalleCabina() {
     }
 
-    public DetalleCabina(String nombre, String descripcion, String precio, boolean activo) {
+    public DetalleCabina(String nombre, String descripcion, Double precio, boolean activo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;

@@ -40,7 +40,6 @@ public class DetalleCabinaController {
         return "detalleCabina";
     }
 
-
     @PostMapping("/guardar-reserva")
     public String guardarReserva(@ModelAttribute Reserva reserva) {
         reservaService.guardar(reserva);

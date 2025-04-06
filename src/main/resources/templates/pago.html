@@ -1,98 +1,146 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout/plantilla :: head}">
-        <title>Proyecto - Grupo #7</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
-    </head>
-    <body>
-        <header th:replace="~{layout/plantilla :: header}"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head(~{::link})">
+    <title>Proyecto - Grupo #7</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+</head>
+<body>
+    <header th:replace="~{layout/plantilla :: header}"/>
 
-        <!-- Sección principal con imagen -->
-        <section class="main-section-imagen2">
-            <div class="hero-text">
-                <h2 style="color: white" th:text="${cabina.nombre}">Cabina</h2>
+    <!-- Sección principal con imagen -->
+    <section class="main-section-imagen2">
+        <div class="hero-text">
+            <h2 style="color: white" th:text="${cabina.nombre}">Cabina</h2>
+        </div>
+    </section>
+
+    <!-- Sección de información -->
+    <section class="section-testimonios container mt-4">
+        <div class="container mt-5 mb-5">
+            <div class="p-4 border rounded" style="border-color: #6A861C;">
+                <h4 class="text-center mb-4">INFORMACIÓN DE PAGO</h4>
+
+                <form th:action="@{/guardar-pago}" method="post" th:object="${pago}">
+                    <input type="hidden" th:field="*{reserva.idReserva}" />
+
+                    <!-- Titular y número de tarjeta -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text">Titular</span>
+                                <input type="text" class="form-control" th:field="*{nombreTarjeta}" placeholder="Nombre en tarjeta" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text">Número</span>
+                                <input type="text" class="form-control" th:field="*{numeroTarjeta}" placeholder="Número de tarjeta" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Código, mes y año -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-text">CVC</span>
+                                <input type="text" class="form-control" th:field="*{codigoSeguridad}" placeholder="Código de seguridad" required />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <label class="input-group-text" for="mes">Mes</label>
+                                <select class="form-select" th:field="*{mes}" id="mes" required>
+                                    <option value="">Mes</option>
+                                    <option value="Enero">Enero</option>
+                                    <option value="Febrero">Febrero</option>
+                                    <option value="Marzo">Marzo</option>
+                                    <option value="Abril">Abril</option>
+                                    <option value="Mayo">Mayo</option>
+                                    <option value="Junio">Junio</option>
+                                    <option value="Julio">Julio</option>
+                                    <option value="Agosto">Agosto</option>
+                                    <option value="Septiembre">Septiembre</option>
+                                    <option value="Octubre">Octubre</option>
+                                    <option value="Noviembre">Noviembre</option>
+                                    <option value="Diciembre">Diciembre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <label class="input-group-text" for="anio">Año</label>
+                                <select class="form-select" th:field="*{anio}" id="anio" required>
+                                    <option value="">Año</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón de confirmar -->
+                    <div class="text-center">
+                        <button type="button" class="btn btn-reservar" data-bs-toggle="modal" data-bs-target="#confirmarPagoModal">
+                            Confirmar y pagar
+                        </button>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección de información -->
-        <section class="section-testimonios container mt-4">
-            <div class="container mt-5 mb-5">
-
-                <div class="p-4 border rounded" style="border-color: #6A861C;">
-                    <h4 class="text-center mb-4">INFORMACIÓN DE PAGO</h4>
-
-                    <form th:action="@{/guardar-pago}" method="post" th:object="${pago}">
-                        <input type="hidden" th:field="*{reserva.idReserva}" />
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-text">Titular</span>
-                                    <input type="text" class="form-control" th:field="*{nombreTarjeta}" placeholder="Nombre en tarjeta" required />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-text">Número</span>
-                                    <input type="text" class="form-control" th:field="*{numeroTarjeta}" placeholder="Número de tarjeta" required />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <span class="input-group-text">CVC</span>
-                                    <input type="text" class="form-control" th:field="*{codigoSeguridad}" placeholder="Código de seguridad" required />
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="mes">Mes</label>
-                                    <select class="form-select" th:field="*{mes}" id="mes" required>
-                                        <option value="">Mes</option>
-                                        <option>Enero</option>
-                                        <option>Febrero</option>
-                                        <option>Marzo</option>
-                                        <option>Abril</option>
-                                        <option>Mayo</option>
-                                        <option>Junio</option>
-                                        <option>Julio</option>
-                                        <option>Agosto</option>
-                                        <option>Septiembre</option>
-                                        <option>Octubre</option>
-                                        <option>Noviembre</option>
-                                        <option>Diciembre</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="anio">Año</label>
-                                    <select class="form-select" th:field="*{anio}" id="anio" required>
-                                        <option value="">Año</option>
-                                        <option>2025</option>
-                                        <option>2026</option>
-                                        <option>2027</option>
-                                        <option>2028</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-reservar">Total a Pagar</button>
-                        </div>
-                    </form>
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="confirmarPagoModal" tabindex="-1" aria-labelledby="confirmarPagoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="confirmarPagoLabel">Confirmación de Pago</h5>
                 </div>
-
+                <div class="modal-body">
+                    <p>¿Desea confirmar el pago por 
+                        <strong>₡ <span th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 2, 'POINT')}">₡ 0</span></strong>?
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="mostrarGracias()">Confirmar</button>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <footer th:replace="~{layout/plantilla :: footer}"/>
-    </body>
+    <!-- Modal de agradecimiento -->
+    <div class="modal fade" id="graciasModal" tabindex="-1" aria-labelledby="graciasLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center" style="background-color: #d9b7e5;">
+                <div class="modal-body">
+                    <img src="/img/orquidea.png" alt="Logo" style="width: 80px; margin-top: 10px;">
+                    <h4 class="mt-3 text-white">¡Gracias por su reserva!</h4>
+                    <hr/>
+                    <p>Código: <strong th:text="${pago.reserva.idReserva}">0001</strong></p>
+                    <p>Monto: <strong>₡ <span th:text="${#numbers.formatDecimal(total, 0, 'COMMA', 2, 'POINT')}">₡ 0</span></strong></p>
+                    <p>Nombre: <strong th:text="${pago.nombreTarjeta}">Nombre Titular</strong></p>
+                    <p>Fecha: <strong th:text="${pago.reserva.fechaEntrada}">24/12/2024</strong></p>
+                    <button type="button" class="btn btn-light mt-2" onclick="window.location.href='/'">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+    
+    <script>
+        function mostrarGracias() {
+            var modal1 = bootstrap.Modal.getInstance(document.getElementById('confirmarPagoModal'));
+            modal1.hide();
+
+            var modal2 = new bootstrap.Modal(document.getElementById('graciasModal'));
+            modal2.show();
+        }
+    </script>
+</body>
 </html>

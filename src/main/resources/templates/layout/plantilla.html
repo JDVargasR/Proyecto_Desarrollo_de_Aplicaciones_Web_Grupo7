@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head th:fragment="head">
+      <head th:fragment="head(extraStyles)">
         <title>Las Orquideas CR</title>
         <meta charset="UTF-8"/>
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
@@ -12,6 +12,9 @@
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
         <script th:src="@{/js/rutinas.js}"></script>
         <link rel="stylesheet" th:href="@{/CSS/estilos.css}"/>
+
+<!-- Estilos extra definidos por vistas -->
+<th:block th:replace="${extraStyles}" />
     </head>
     <body>
         <header class="header">
@@ -21,7 +24,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a th:href="@{/templates/habitaciones}">Habitaciones</a></li>
-                    <li><a href="energias_renovables.html" class="nav-menu-link">Energias Renovables</a></li>
+                    <li><a th:href="@{/energias/lista}" class="nav-menu-link">Energías Renovables</a></li>
                     <li><a th:href="@{/templates/preguntasFrecuentes}">Preguntas Frecuentes</a></li>
                     <li><a th:href="@{/templates/blog}">Blog</a></li>
                     <li><a th:href="@{/templates/imagenes}">Imágenes</a></li>
