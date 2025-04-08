@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-      <head th:replace="layout/plantilla :: head(~{::link})">
+    <head th:replace="layout/plantilla :: head(~{::link})">
         <title>Proyecto - Grupo #7</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet"/>
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
@@ -27,10 +28,12 @@
                         <a href="#modal-reserva" class="btn btn-light">Reservar</a>
                     </div>
 
-                    <!-- Galería de imágenes -->
+                    <!-- Galería de imágenes con efecto lightbox -->
                     <div class="row g-2 img-grid mb-3" th:if="${cabina.galeriaImagenes != null}">
                         <div class="col-6" th:each="img : ${cabina.galeriaImagenes.split(',')}">
-                            <img th:src="@{${img}}" class="custom-imghabitacion" alt="Imagen adicional"/>
+                            <a th:href="@{${img}}" data-lightbox="galeriaCabina" data-title="Imagen de la cabina">
+                                <img th:src="@{${img}}" class="custom-imghabitacion" alt="Imagen adicional"/>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -58,23 +61,23 @@
                 <form th:action="@{/templates/guardar-reserva}" method="post">
                     <input type="hidden" name="cabina.idDetalleCabina" th:value="${cabina.idDetalleCabina}" />
 
-                
+
                     <label for="fechaEntrada">Entrada:</label>
                     <input type="date" name="fechaEntrada" class="form-control mb-2" required />
-                
+
                     <label for="fechaSalida">Salida:</label>
                     <input type="date" name="fechaSalida" class="form-control mb-2" required />
-                
+
                     <label for="personas">Personas:</label>
                     <input type="number" name="personas" min="1" max="10" class="form-control mb-2" required />
-                
+
                     <button type="submit" class="btn btn-success">Confirmar reserva</button>
                 </form>
             </div>
         </div>
 
-        
-
         <footer th:replace="~{layout/plantilla :: footer}"/>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     </body>
 </html>
