@@ -9,6 +9,10 @@ import com.Proyecto_Grupo7.dao.EnergiaRenovableDao;
 import com.Proyecto_Grupo7.domain.EnergiaRenovable;
 import com.Proyecto_Grupo7.service.EnergiaRenovableService;
 
+/**
+ *
+ * @author gmora
+ */
 @Service
 public class EnergiaRenovableServiceImpl implements EnergiaRenovableService {
 

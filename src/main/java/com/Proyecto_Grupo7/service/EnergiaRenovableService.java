@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.Proyecto_Grupo7.domain.EnergiaRenovable;
 
+/**
+ *
+ * @author gmora
+ */
 public interface EnergiaRenovableService {
     List<EnergiaRenovable> listarEnergias();
     void guardar(EnergiaRenovable energia);
