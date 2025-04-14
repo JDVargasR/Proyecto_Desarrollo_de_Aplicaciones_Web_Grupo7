@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Fragmento: acordeón de preguntas frecuentes -->
+<section th:fragment="acordeonPreguntas" class="section-testimonios">
+    <h2 style="color: BLACK">Preguntas Frecuentes</h2>
+    <h3>Infórmate más sobre nuestro hotel</h3>
+
+    <div class="accordion" id="accordionTestimonios">
+
+        <!-- Fragmento: Pregunta 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioUno">
+                    ¿De cuántas personas es la casa familiar?
+                </button>
+            </h2>
+            <div id="testimonioUno" class="accordion-collapse collapse show">
+                <div class="accordion-body">Es para 10 personas.</div>
+            </div>
+        </div>
+
+        <!-- Fragmento: Pregunta 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioDos">
+                    ¿Cuánto es el precio del estudio por pareja?
+                </button>
+            </h2>
+            <div id="testimonioDos" class="accordion-collapse collapse">
+                <div class="accordion-body">Contamos con los precios de 45.000 y con desayuno 50.000.</div>
+            </div>
+        </div>
+
+        <!-- Fragmento: Pregunta 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioTres">
+                    ¿Dónde se encuentran ubicados?
+                </button>
+            </h2>
+            <div id="testimonioTres" class="accordion-collapse collapse">
+                <div class="accordion-body">Nos encontramos en un pueblito llamado San Lorenzo de Tarrazú.</div>
+            </div>
+        </div>
+
+        <!-- Fragmento: Pregunta 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCuatro">
+                    ¿Aceptan Mascotas?
+                </button>
+            </h2>
+            <div id="testimonioCuatro" class="accordion-collapse collapse">
+                <div class="accordion-body">Sí, tenemos diferentes habitaciones donde está permitido.</div>
+            </div>
+        </div>
+
+        <!-- Fragmento: Pregunta 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCinco">
+                    ¿Precio de la cabina 6 para una persona?
+                </button>
+            </h2>
+            <div id="testimonioCinco" class="accordion-collapse collapse">
+                <div class="accordion-body">El precio es de 20.000 para una persona y con desayuno 25.000.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br><br>
+</section>
+
+</body>
+</html>

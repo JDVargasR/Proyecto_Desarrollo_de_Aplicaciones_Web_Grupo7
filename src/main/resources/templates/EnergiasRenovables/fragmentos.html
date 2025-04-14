@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Fragmento: Lista de Energías -->
+<section th:fragment="listaEnergias">
+    <div th:each="energia : ${energias}" class="bloque-energia">
+        <h3 th:text="${energia.titulo}"></h3>
+        <p th:text="${energia.descripcion}"></p>
+        <img th:src="@{${energia.imagenUrl}}" width="300" />
+
+        <br />
+        <button class="btn-editar"
+                th:attr="data-id=${energia.id_energias_renovables},
+                         data-titulo=${energia.titulo},
+                         data-descripcion=${energia.descripcion},
+                         data-imagen=${energia.imagenUrl}"
+                onclick="abrirModalDesdeAtributos(this)">
+            Editar
+        </button>
+
+        <a th:href="@{/energias/eliminar/{id}(id=${energia.id_energias_renovables})}"
+           onclick="return confirm('¿Deseás eliminar esta energía?')">
+            Eliminar
+        </a>
+        <hr />
+    </div>
+</section>
+
+<!-- Fragmento: Modal Agregar -->
+<section th:fragment="modalAgregar">
+    <div id="modalAgregar" class="modal">
+        <div class="modal-contenido">
+            <span class="modal-cerrar" onclick="cerrarModalAgregar()">&times;</span>
+            <h3>Agregar Nueva Energía</h3>
+
+            <form th:action="@{/energias/guardar}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_energias_renovables" />
+
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Nombre de la energía" required />
+
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" rows="4" placeholder="Describa brevemente" required></textarea>
+
+                <label for="imagenFile">Imagen:</label>
+                <input type="file" name="imagenFile" id="imagenFile" accept="image/*" required />
+                <small style="color: gray;">* Tamaño recomendado: 800x500px (JPG o PNG)</small>
+
+                <br /><br />
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Fragmento: Modal Editar -->
+<section th:fragment="modalEditar">
+    <div id="modalEditar" class="modal">
+        <div class="modal-contenido">
+            <span class="modal-cerrar" onclick="cerrarModalEditar()">&times;</span>
+            <h3>Editar Energía</h3>
+
+            <form id="formEditar" th:action="@{/energias/editar/__id__}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_energias_renovables" id="edit-id" />
+
+                <label for="edit-titulo">Título:</label>
+                <input type="text" name="titulo" id="edit-titulo" placeholder="Nombre de la energía" required />
+
+                <label for="edit-descripcion">Descripción:</label>
+                <textarea name="descripcion" id="edit-descripcion" rows="4" placeholder="Describa brevemente" required></textarea>
+
+                <label for="edit-imagenFile">Imagen (opcional):</label>
+                <input type="file" name="imagenFile" id="edit-imagenFile" accept="image/*" />
+                <small style="color: gray;">* Tamaño recomendado: 800x500px (JPG o PNG)</small>
+
+                <br /><br />
+                <button type="submit" class="btn btn-success">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

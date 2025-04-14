@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head(~{::link})">
+    <title>Proyecto - Grupo #7</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header th:replace="~{layout/plantilla :: header}"/>
+
+    <section th:replace="~{DetalleCabina/fragmentos :: seccionImagenCabina}"/>
+    <section th:replace="~{DetalleCabina/fragmentos :: seccionInformacionCabina}"/>
+    <section th:replace="~{DetalleCabina/fragmentos :: modalReserva}"/>
+
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>

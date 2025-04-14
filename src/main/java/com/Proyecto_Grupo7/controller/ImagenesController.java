@@ -4,14 +4,13 @@
  */
 package com.Proyecto_Grupo7.controller;
 
-import com.Proyecto_Grupo7.service.ImagenesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.Proyecto_Grupo7.service.ImagenesService;
 
 
 @Controller
@@ -26,7 +25,7 @@ public class ImagenesController {
         var lista = imagenesService.getImagenes(false);
         model.addAttribute("imagenes", lista);
         model.addAttribute("totalImagenes", lista.size());
-        return "/imagenes";
+        return "Imagenes/imagenes";
     }
     
     

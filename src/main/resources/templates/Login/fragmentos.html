@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Fragmento: Sección principal del login y registro -->
+<main th:fragment="loginMain">
+    <div th:if="${param.registroExitoso}">
+        <p style="color: green;">¡Registro exitoso! Ahora puedes iniciar sesión.</p>
+    </div>
+
+    <div th:if="${param.error}">
+        <p style="color: red;">Usuario o contraseña inválidos.</p>
+    </div>
+
+    <div th:if="${param.errorUsuarioExiste}">
+        <p style="color: red;">Ese nombre de usuario ya está registrado. Intenta con otro.</p>
+    </div>
+
+    <div class="contenedor__todo">
+        
+        <!-- Fragmento: Caja trasera -->
+        <div class="caja__trasera">
+            <div class="caja__trasera-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Inicia sesión para entrar en la página</p>
+                <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+            </div>
+            <div class="caja__trasera-register">
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <button id="btn__registrarse">Regístrarse</button>
+            </div>
+        </div>
+
+        <!-- Fragmento: Formularios de login y registro -->
+        <div class="contenedor__login-register">
+
+            <!-- Login -->
+            <form th:action="@{/Login/Login}" method="post" class="formulario__login">
+
+                <h2>Iniciar Sesión</h2>
+                <input type="text" name="username" placeholder="Usuario" required/>
+                <input type="password" name="password" placeholder="Contraseña" required/>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <!-- Register -->
+            <form th:action="@{/registro/crearUsuario}" method="post" class="formulario__register">
+                <h2>Regístrarse</h2>
+                <input type="text" name="nombre" placeholder="Nombre completo" required/>
+                <input type="text" name="correo" placeholder="Correo Electrónico" required/>
+                <input type="text" name="username" placeholder="Usuario" required/>
+                <input type="password" name="password" placeholder="Contraseña" required/>
+                <button type="submit">Regístrarse</button>
+            </form>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

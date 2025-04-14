@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Fragmento: sección de habitaciones -->
+<section th:fragment="seccionHabitaciones" class="section-testimonios">
+    <h2 class="section-testimonios-title">Informate más sobre nuestro hotel</h2>
+    <div class="accordion" id="accordionTestimonios">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/sectionhabitacionescabina.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/1'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Cabina 5</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/Cabina6.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/2'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Cabina 6</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/Cabina7.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/3'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Cabina 7</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/sectionhabitacionescasafamiliar.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/5'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Casa Familiar</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/sectionhabitacionesvilla.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/4'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Villa Familiar</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card border-dark rounded overflow-hidden position-relative">
+                    <img th:src="@{/Img's/Imagenes Home/section habitaciones/sectionhabitacionesestudio.jpg}" class="card-img-top custom-img" alt="Imagen"/>
+                    <a th:href="@{'/templates/detallecabina/6'}" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mt-2">Estudio</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head(~{::link})">
+    <title>Contacto - Las Orquideas CR</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+</head>
+
+<body>
+    <header th:replace="~{layout/plantilla :: header}"/>
+
+    <br/><br/><br/>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <section th:replace="~{Contacto/fragmentos :: infoContacto}"/>
+            <section th:replace="~{Contacto/fragmentos :: formularioContacto}"/>
+        </div>
+    </section>
+
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Fragmento: sección principal con imagen -->
+<section th:fragment="seccionImagenCabina" class="main-section-imagen2">
+    <div class="hero-text">
+        <h2 style="color: white" th:text="${cabina.nombre}">Cabina</h2>
+    </div>
+</section>
+
+<!-- Fragmento: sección de información -->
+<section th:fragment="seccionInformacionCabina" class="section-testimonios container mt-4">
+    <div class="row">
+
+        <!-- Columna izquierda: galería -->
+        <div class="col-md-8">
+            <div class="header-bg mb-3">
+                <h4 class="mb-0" th:text="${cabina.nombre}">Nombre</h4>
+                <a href="#modal-reserva" class="btn btn-light">Reservar</a>
+            </div>
+
+            <!-- Galería -->
+            <div class="row g-2 img-grid mb-3" th:if="${cabina.galeriaImagenes != null}">
+                <div class="col-6" th:each="img : ${cabina.galeriaImagenes.split(',')}">
+                    <a th:href="@{${img}}" data-lightbox="galeriaCabina" data-title="Imagen de la cabina">
+                        <img th:src="@{${img}}" class="custom-imghabitacion" alt="Imagen adicional"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha: info -->
+        <div class="col-md-4">
+            <div class="info-box">
+                <p><strong>Información:</strong></p>
+                <p><strong>Contamos con diferentes opciones:</strong></p>
+                <p th:utext="${#strings.replace(cabina.precio, '\n', '<br/>')}"></p>
+                <p><strong>Cuenta con:</strong></p>
+                <p th:text="${cabina.descripcion}">Descripción</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fragmento: modal para reservar -->
+<section th:fragment="modalReserva">
+    <div id="modal-reserva" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="modal-cerrar">&times;</a>
+            <h3>Reservaciones</h3>
+
+            <form th:action="@{/templates/guardar-reserva}" method="post">
+                <input type="hidden" name="cabina.idDetalleCabina" th:value="${cabina.idDetalleCabina}" />
+
+                <label for="fechaEntrada">Entrada:</label>
+                <input type="date" name="fechaEntrada" class="form-control mb-2" required />
+
+                <label for="fechaSalida">Salida:</label>
+                <input type="date" name="fechaSalida" class="form-control mb-2" required />
+
+                <label for="personas">Personas:</label>
+                <input type="number" name="personas" min="1" max="10" class="form-control mb-2" required />
+
+                <button type="submit" class="btn btn-success">Confirmar reserva</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

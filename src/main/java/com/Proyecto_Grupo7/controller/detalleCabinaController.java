@@ -1,5 +1,3 @@
-
-
 package com.Proyecto_Grupo7.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +36,7 @@ public class DetalleCabinaController {
         var cabina = detallecabinaService.getDetalleCabinaById(id);
 
         model.addAttribute("cabina", cabina);
-        return "detalleCabina";
+        return "DetalleCabina/DetalleCabina";
     }
 
     @PostMapping("/guardar-reserva")
@@ -48,8 +46,5 @@ public class DetalleCabinaController {
         return "redirect:/pago/" + id;
     }
     
-    @GetMapping("/pago")
-    public String pagar(Model model) {
-        return "pago"; 
-    }
+
 }

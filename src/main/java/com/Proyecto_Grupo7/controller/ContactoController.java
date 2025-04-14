@@ -29,7 +29,7 @@ public class ContactoController {
     public String listarContactos(Model model) {
         List<Contacto> contactos = contactoService.obtenerContactos();
         model.addAttribute("contactos", contactos);
-        return "contacto";
+        return "Contacto/contacto";
     }
 
     @PostMapping("/guardar")

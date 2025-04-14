@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head(~{::link})">
+    <title>Proyecto - Grupo #7</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
+</head>
+<body>
+    <header th:replace="~{layout/plantilla :: header}"/>
+
+    <section th:replace="~{Pago/fragmentos :: seccionImagenCabina}"/>
+    <section th:replace="~{Pago/fragmentos :: formularioPago}"/>
+    <section th:replace="~{Pago/fragmentos :: modalConfirmacion}"/>
+    <section th:replace="~{Pago/fragmentos :: modalGracias}"/>
+
+    <footer th:replace="~{layout/plantilla :: footer}"/>
+
+    <script>
+        function mostrarGracias() {
+            var modal1 = bootstrap.Modal.getInstance(document.getElementById('confirmarPagoModal'));
+            modal1.hide();
+
+            var modal2 = new bootstrap.Modal(document.getElementById('graciasModal'));
+            modal2.show();
+        }
+    </script>
+</body>
+</html>

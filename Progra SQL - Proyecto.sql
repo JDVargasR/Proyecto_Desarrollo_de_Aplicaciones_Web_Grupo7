@@ -15,12 +15,37 @@ use progra;
 -----------------------------------------------------------------
 
 
+CREATE TABLE usuario (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    correo VARCHAR(100),
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(100)
+);
+
+CREATE TABLE rol (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+/*creamos los roles disponibles*/
+INSERT INTO rol (id, nombre) VALUES (1, 'USER');
 
 
+CREATE TABLE usuario_rol (
+    usuario_id BIGINT,
+    rol_id BIGINT,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (rol_id) REFERENCES rol(id),
+    PRIMARY KEY (usuario_id, rol_id)
+);
 
+/*creamos el usuario*/
+INSERT INTO usuario (nombre, correo, username, password)
+VALUES ('josue', 'prueba@email.com', 'josue', '$2a$10$Tpg.C9NcsxF1NnF6S4q3Wuw7OmMIGqPDbw6o.qQeE7SR9F3BWSz8m');
 
-
-
+/*le asignamos un rol a ese usuario*/
+INSERT INTO usuario_rol (usuario_id, rol_id) VALUES (1, 1);
 
 
 --------------------------------------------------------------------

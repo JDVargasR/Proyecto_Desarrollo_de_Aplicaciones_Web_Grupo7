@@ -35,7 +35,7 @@ public class PagoController {
         double total = reserva.getCabina().getPrecio() * reserva.getPersonas();
         model.addAttribute("total", total);
     
-        return "pago";
+        return "Pago/pago";
     }
     
     
