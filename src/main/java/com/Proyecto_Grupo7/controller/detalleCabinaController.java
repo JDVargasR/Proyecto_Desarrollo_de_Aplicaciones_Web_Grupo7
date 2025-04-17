@@ -28,7 +28,7 @@ public class DetalleCabinaController {
         var lista = detallecabinaService.getDetalleCabina(false);
         model.addAttribute("detallecabina", lista);
         model.addAttribute("totalDetalleCabina", lista.size());
-        return "/detallecabina";
+        return "DetalleCabina/DetalleCabina";
     }
 
     @GetMapping("/detallecabina/{id}")
@@ -46,5 +46,8 @@ public class DetalleCabinaController {
         return "redirect:/pago/" + id;
     }
     
-
+    @GetMapping("/pago")
+    public String pagar(Model model) {
+        return "pago"; 
+    }
 }
