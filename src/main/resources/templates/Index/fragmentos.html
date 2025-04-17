@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head></head>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+</head>
+
+
 <body>
 
 <!-- Fragmento portada -->
@@ -19,12 +23,42 @@
 <section th:fragment="descubreEncanto" class="descubre-encanto-section">
     <h2>Descubre el encanto de nuestro hotel</h2>
     <div class="imagenes">
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto1.jpg}" alt="Descubre"/><p>Descubre</p></div>
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto2.jpg}" alt="Explora"/><p>Explora</p></div>
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto3.jpg}" alt="Descanso"/><p>Descanso</p></div>
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto4.jpg}" alt="Instalaciones"/><p>Instalaciones</p></div>
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto5.jpg}" alt="Naturaleza"/><p>Naturaleza</p></div>
-        <div class="imagen-container"><img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto6.jpg}" alt="Actividades"/><p>Actividades</p></div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto1.jpg}" data-lightbox="galeriaEncanto" data-title="Descubre">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto1.jpg}" alt="Descubre"/>
+            </a>
+            <p>Descubre</p>
+        </div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto2.jpg}" data-lightbox="galeriaEncanto" data-title="Explora">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto2.jpg}" alt="Explora"/>
+            </a>
+            <p>Explora</p>
+        </div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto3.jpg}" data-lightbox="galeriaEncanto" data-title="Descanso">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto3.jpg}" alt="Descanso"/>
+            </a>
+            <p>Descanso</p>
+        </div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto4.jpg}" data-lightbox="galeriaEncanto" data-title="Instalaciones">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto4.jpg}" alt="Instalaciones"/>
+            </a>
+            <p>Instalaciones</p>
+        </div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto5.jpg}" data-lightbox="galeriaEncanto" data-title="Naturaleza">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto5.jpg}" alt="Naturaleza"/>
+            </a>
+            <p>Naturaleza</p>
+        </div>
+        <div class="imagen-container">
+            <a th:href="@{/Img's/Imagenes Home/section descubre encanto/encanto6.jpg}" data-lightbox="galeriaEncanto" data-title="Actividades">
+                <img th:src="@{/Img's/Imagenes Home/section descubre encanto/encanto6.jpg}" alt="Actividades"/>
+            </a>
+            <p>Actividades</p>
+        </div>
     </div>
 </section>
 
@@ -142,6 +176,6 @@
         </div>
     </div>
 </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>

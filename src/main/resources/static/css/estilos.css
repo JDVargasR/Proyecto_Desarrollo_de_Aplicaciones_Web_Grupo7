@@ -221,46 +221,54 @@ body {
 .descubre-encanto-section {
     padding: 50px 20px;
     text-align: center;
-    max-width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
 .imagenes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive 3 columnas */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive en filas */
+    gap: 30px;
     justify-content: center;
 }
 
 .imagen-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Fuerza 400x400 aprox sin altura fija */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .imagen-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.imagen-container a {
+    width: 100%;
+    height: 80%;
 }
 
 .imagen-container img {
-    object-fit: cover;
     width: 100%;
-    height: 300px;
-    transition: transform 0.4s ease;
-    border-radius: 10px 10px 0 0;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s ease;
 }
 
 .imagen-container p {
-    margin: 15px 10px;
-    font-size: 16px;
-    color: #333;
+    font-size: 18px;
     font-weight: bold;
+    color: #333;
+    margin: 10px 0;
 }
 
 /* aqui es el estilo de la section-habitaciones-------------------------------- */
