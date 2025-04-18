@@ -21,10 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.Proyecto_Grupo7.domain.EnergiaRenovable;
 import com.Proyecto_Grupo7.service.EnergiaRenovableService;
 
-/**
- *
- * @author gmora
- */
 
 @Controller
 @RequestMapping("/energias") // 

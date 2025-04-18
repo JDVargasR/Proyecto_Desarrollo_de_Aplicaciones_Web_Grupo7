@@ -36,4 +36,46 @@ public class Reserva implements Serializable {
     @JoinColumn(name = "id_detalle_cabina")
     private DetalleCabina cabina;
 
+    public Long getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(Long idReserva) {
+        this.idReserva = idReserva;
+    }
+
+    public String getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public void setFechaEntrada(String fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
+    }
+
+    public String getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(String fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public int getPersonas() {
+        return personas;
+    }
+
+    public void setPersonas(int personas) {
+        this.personas = personas;
+    }
+
+    public DetalleCabina getCabina() {
+        return cabina;
+    }
+
+    public void setCabina(DetalleCabina cabina) {
+        this.cabina = cabina;
+    }
+
+
+
 }

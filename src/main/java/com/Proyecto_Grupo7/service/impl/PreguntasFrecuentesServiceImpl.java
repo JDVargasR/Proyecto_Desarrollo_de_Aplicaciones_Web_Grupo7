@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class PreguntasFrecuentesServiceImpl implements PreguntasFrecuentesService{
     
+    
     @Autowired
     private PreguntasFrecuentesDao preguntasfrecuentesDao;
     
@@ -50,4 +51,16 @@ public class PreguntasFrecuentesServiceImpl implements PreguntasFrecuentesServic
     public void delete(PreguntasFrecuentes preguntasfrecuentes) {
         preguntasfrecuentesDao.delete(preguntasfrecuentes);
     }
+
+
+    @Override
+public PreguntasFrecuentes getPreguntaPorId(Long id) {
+    return preguntasfrecuentesDao.findById(id).orElse(null);
+}
+
+@Override
+public void delete(Long id) {
+    preguntasfrecuentesDao.deleteById(id);
+}
+
 }

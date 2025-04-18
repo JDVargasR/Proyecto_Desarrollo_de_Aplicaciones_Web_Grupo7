@@ -35,4 +35,37 @@ public class Imagenes implements Serializable{
         this.descripcion = descripcion;
         this.activo = activo;
     }
+
+    public long getIdImagen() {
+        return idImagen;
+    }
+
+    public void setIdImagen(long idImagen) {
+        this.idImagen = idImagen;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
 }

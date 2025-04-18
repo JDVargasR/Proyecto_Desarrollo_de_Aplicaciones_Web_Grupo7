@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.Proyecto_Grupo7.domain;
 
-/**
- *
- * @author gmora
- */
+
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -40,4 +34,46 @@ public class Blog implements Serializable{
         this.descripcion = descripcion;
         this.activo = activo;
     }
+
+    public long getIdBlog() {
+        return idBlog;
+    }
+
+    public void setIdBlog(long idBlog) {
+        this.idBlog = idBlog;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+
+
 }

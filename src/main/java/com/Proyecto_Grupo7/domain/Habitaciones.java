@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.Proyecto_Grupo7.domain;
 
 
@@ -35,4 +32,37 @@ public class Habitaciones implements Serializable{
         this.descripcion = descripcion;
         this.activo = activo;
     }
+
+    public long getIdHabitacion() {
+        return idHabitacion;
+    }
+
+    public void setIdHabitacion(long idHabitacion) {
+        this.idHabitacion = idHabitacion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
 }

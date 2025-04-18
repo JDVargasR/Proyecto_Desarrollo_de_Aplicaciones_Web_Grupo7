@@ -78,7 +78,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE preguntas_frecuentes (
   id_pregunta INT NOT NULL AUTO_INCREMENT,
   pregunta VARCHAR(255) NOT NULL,
-  respuesta TEXT NOT NULL,
+  respuesta TEXT NULL,
   activo BOOLEAN,
   PRIMARY KEY (id_pregunta)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4;

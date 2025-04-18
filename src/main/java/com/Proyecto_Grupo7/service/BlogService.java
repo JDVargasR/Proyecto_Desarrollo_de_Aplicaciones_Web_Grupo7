@@ -6,10 +6,7 @@ package com.Proyecto_Grupo7.service;
 
 import com.Proyecto_Grupo7.domain.Blog;
 import java.util.List;
-/**
- *
- * @author gmora
- */
+
 public interface BlogService {
     
     // Se obtiene un listado de categorias en un List

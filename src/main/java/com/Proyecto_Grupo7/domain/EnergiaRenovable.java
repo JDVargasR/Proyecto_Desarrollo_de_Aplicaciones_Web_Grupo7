@@ -9,10 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-/**
- *
- * @author gmora
- */
+
 
 @Data
 @Entity
@@ -37,6 +34,38 @@ public class EnergiaRenovable {
     }
 
     public EnergiaRenovable() {
+    }
+
+    public Long getId_energias_renovables() {
+        return id_energias_renovables;
+    }
+
+    public void setId_energias_renovables(Long id_energias_renovables) {
+        this.id_energias_renovables = id_energias_renovables;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
     }
 
 

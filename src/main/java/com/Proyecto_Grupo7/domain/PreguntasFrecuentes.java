@@ -35,4 +35,38 @@ public class PreguntasFrecuentes implements Serializable{
         this.pregunta = pregunta;
         this.activo = activo;
     }
+
+    public long getIdPregunta() {
+        return idPregunta;
+    }
+
+    public void setIdPregunta(long idPregunta) {
+        this.idPregunta = idPregunta;
+    }
+
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+
 }

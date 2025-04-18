@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Proyecto_Grupo7.service.BlogService;
 
-/**
- *
- * @author gmora
- * 
- */
 @Controller
 @RequestMapping("/templates")
 public class BlogController {

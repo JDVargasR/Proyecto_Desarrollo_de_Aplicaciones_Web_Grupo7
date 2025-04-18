@@ -1,78 +1,65 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head></head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title>Preguntas Frecuentes</title>
+</head>
 <body>
 
-<!-- Fragmento: acordeón de preguntas frecuentes -->
 <section th:fragment="acordeonPreguntas" class="section-testimonios">
-    <h2 style="color: BLACK">Preguntas Frecuentes</h2>
-    <h3>Infórmate más sobre nuestro hotel</h3>
+    <h2 style="color: BLACK">PREGUNTAS FRECUENTES</h2>
+    <h3>INFÓRMATE MÁS SOBRE NUESTRO HOTEL</h3>
 
     <div class="accordion" id="accordionTestimonios">
 
-        <!-- Fragmento: Pregunta 1 -->
-        <div class="accordion-item">
+        <!-- ✅ Preguntas desde la base de datos -->
+        <div th:each="item : ${preguntasFrecuentes}" class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioUno">
-                    ¿De cuántas personas es la casa familiar?
+                <button class="accordion-button collapsed" type="button"
+                        th:attr="data-bs-toggle='collapse', data-bs-target='#dinamica'+${item.idPregunta}">
+                    <span th:text="${item.pregunta}"></span>
                 </button>
             </h2>
-            <div id="testimonioUno" class="accordion-collapse collapse show">
-                <div class="accordion-body">Es para 10 personas.</div>
+            <div th:id="'dinamica' + ${item.idPregunta}" class="accordion-collapse collapse">
+                <div class="accordion-body">
+
+                    <span th:if="${item.respuesta != null}" th:text="${item.respuesta}"></span>
+                    <span th:if="${item.respuesta == null}" style="color: gray;">Aún sin respuesta</span>
+
+                    <!-- ✅ Formulario de edición inline solo visible para ADMIN -->
+                    <div sec:authorize="hasRole('ADMIN')" class="mt-3">
+                        <form th:action="@{/templates/admin/pregunta/editar-inline}" method="post">
+                            <input type="hidden" name="idPregunta" th:value="${item.idPregunta}" />
+
+                            <label for="pregunta">Editar Pregunta:</label>
+                            <input type="text" name="pregunta" th:value="${item.pregunta}" class="form-control mb-2" required />
+
+                            <label for="respuesta">Responder:</label>
+                            <textarea name="respuesta" class="form-control mb-2" th:text="${item.respuesta}"></textarea>
+
+                            <button type="submit" class="btn btn-sm btn-success">Guardar</button>
+                            <a th:href="@{/templates/admin/pregunta/eliminar/{id}(id=${item.idPregunta})}" class="btn btn-sm btn-danger">Eliminar</a>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
-
-        <!-- Fragmento: Pregunta 2 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioDos">
-                    ¿Cuánto es el precio del estudio por pareja?
-                </button>
-            </h2>
-            <div id="testimonioDos" class="accordion-collapse collapse">
-                <div class="accordion-body">Contamos con los precios de 45.000 y con desayuno 50.000.</div>
-            </div>
-        </div>
-
-        <!-- Fragmento: Pregunta 3 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioTres">
-                    ¿Dónde se encuentran ubicados?
-                </button>
-            </h2>
-            <div id="testimonioTres" class="accordion-collapse collapse">
-                <div class="accordion-body">Nos encontramos en un pueblito llamado San Lorenzo de Tarrazú.</div>
-            </div>
-        </div>
-
-        <!-- Fragmento: Pregunta 4 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCuatro">
-                    ¿Aceptan Mascotas?
-                </button>
-            </h2>
-            <div id="testimonioCuatro" class="accordion-collapse collapse">
-                <div class="accordion-body">Sí, tenemos diferentes habitaciones donde está permitido.</div>
-            </div>
-        </div>
-
-        <!-- Fragmento: Pregunta 5 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#testimonioCinco">
-                    ¿Precio de la cabina 6 para una persona?
-                </button>
-            </h2>
-            <div id="testimonioCinco" class="accordion-collapse collapse">
-                <div class="accordion-body">El precio es de 20.000 para una persona y con desayuno 25.000.</div>
-            </div>
-        </div>
-
     </div>
 
-    <br><br><br>
+    <!-- ✅ Formulario para que el usuario agregue preguntas -->
+    <div sec:authorize="hasRole('USER')" class="mt-4">
+        <form th:action="@{/templates/preguntasFrecuentes/enviar}" method="post">
+            <div class="mb-3">
+                <label for="pregunta" class="form-label">¿Tienes una pregunta?</label>
+                <input type="text" id="pregunta" name="pregunta" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-success">Enviar Pregunta</button>
+        </form>
+    </div>
+
 </section>
 
 </body>
