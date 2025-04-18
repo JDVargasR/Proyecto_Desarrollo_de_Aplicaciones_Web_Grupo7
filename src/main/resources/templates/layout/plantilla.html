@@ -14,7 +14,7 @@
         <link rel="stylesheet" th:href="@{/CSS/estilos.css}"/>
 
 <!-- Estilos extra definidos por vistas -->
-<th:block th:replace="${extraStyles}" />
+<th:block th:if="${extraStyles != null}" th:replace="${extraStyles}" />
     </head>
     <body>
         <header class="header">
@@ -27,7 +27,7 @@
                     <li><a th:href="@{/energias/lista}" class="nav-menu-link">Energías Renovables</a></li>
                     <li><a th:href="@{/templates/preguntasFrecuentes}">Preguntas Frecuentes</a></li>
                     <li><a th:href="@{/templates/blog}">Blog</a></li>
-                    <li><a th:href="@{/templates/imagenes}">Imágenes</a></li>
+                    <li><a th:href="@{/imagenes}">Imágenes</a></li>
                 </ul>            
             </nav>
 

@@ -68,7 +68,7 @@ VALUES (2, 2);
 /* la tabla de categoria contiene categorias de productos*/
 create table imagenes (
   id_imagen INT NOT NULL AUTO_INCREMENT,
-  descripcion VARCHAR(30) NOT NULL,
+  descripcion VARCHAR(255) NOT NULL,
   ruta_imagen varchar(1024),
   activo bool,
   PRIMARY KEY (id_imagen))
