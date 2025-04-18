@@ -222,6 +222,12 @@ UPDATE detalle_cabina
 SET galeria_imagenes = '/Img''s/Imagenes Home/section habitaciones/estudio_1.jpg,/Img''s/Imagenes Home/section habitaciones/estudio_2.jpg,/Img''s/Imagenes Home/section habitaciones/estudio_3.jpg,/Img''s/Imagenes Home/section habitaciones/estudio_4.jpg,/Img''s/Imagenes Home/section habitaciones/estudio_5.jpg' 
 WHERE id_detalle_cabina = 6;
 
+INSERT INTO preguntas_frecuentes (pregunta, respuesta, activo) VALUES
+('¿De cuántas personas es la casa familiar?', 'Es para 10 personas.', true),
+('¿Cuánto es el precio del estudio por pareja?', 'Contamos con los precios de 45.000 y con desayuno 50.000.', true),
+('¿Dónde se encuentran ubicados?', 'Nos encontramos en un pueblito llamado San Lorenzo de Tarrazú.', true),
+('¿Aceptan Mascotas?', 'Sí, tenemos diferentes habitaciones donde está permitido.', true),
+('¿Precio de la cabina 6 para una persona?', 'El precio es de 20.000 para una persona y con desayuno 25.000.', true);
 
 
 
