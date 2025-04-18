@@ -28,7 +28,7 @@ public class DetalleCabinaController {
         var lista = detallecabinaService.getDetalleCabina(false);
         model.addAttribute("detallecabina", lista);
         model.addAttribute("totalDetalleCabina", lista.size());
-        return "/detallecabina";
+        return "DetalleCabina/DetalleCabina";
     }
 
     @GetMapping("/detallecabina/{id}")
@@ -36,7 +36,7 @@ public class DetalleCabinaController {
         var cabina = detallecabinaService.getDetalleCabinaById(id);
 
         model.addAttribute("cabina", cabina);
-        return "detalleCabina";
+        return "DetalleCabina/DetalleCabina";
     }
 
     @PostMapping("/guardar-reserva")
