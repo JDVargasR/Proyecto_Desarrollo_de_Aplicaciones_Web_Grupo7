@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head></head>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog - Hotel Las Orquídeas</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
 <body>
 
 <!-- Fragmento Evangelia Gonzalez -->
 <section th:fragment="entradaEvangelia">
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center mt-5">
         <div class="row position-relative">
-            <!-- Imagen -->
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <img th:src="@{\Img's\tiktokphoto.jpg}" class="w-50 mb-5" alt="50"/>
+                <img th:src="@{/Img's/tiktokphoto.jpg}" class="w-50 mb-5" alt="Evangelia"/>
             </div>
-
-            <!-- Texto -->
             <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-center">
-                <br/>
-                <h3 class="containerimagenes text-center">
-                    Evangelia Gonzalez visita el hotel Las Orquideas
-                </h3>
-                <br/>
-                <h5 class="mt-0">La famosa tiktoker “al infinitoo”</h5>
+                <h3 class="containerimagenes text-center">Evangelia Gonzalez visita el hotel Las Orquídeas</h3>
+                <h5>La famosa tiktoker “al infinitoo”</h5>
                 <p>
                     Una famosa tiktoker argentina realizó un recorrido por Costa Rica con su patineta y visitó varios 
                     destinos del país. Uno de los lugares que más la cautivó fue el hotel Las Orquídeas, donde quedó 
                     encantada con las modernas instalaciones y la atención excepcional del personal.
                 </p>
-                <br/>
             </div>
         </div>
     </div>
@@ -34,30 +31,72 @@
 
 <!-- Fragmento Sol -->
 <section th:fragment="entradaSol">
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center mt-5">
         <div class="row g-0 bg-body-secondary position-relative">
-            <!-- Imagen -->
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <img th:src="@{\Img's\sol.jpg}" class="w-50 mb-5" alt="50"/>
+                <img th:src="@{/Img's/sol.jpg}" class="w-50 mb-5" alt="Sol"/>
             </div>
-
-            <!-- Texto -->
             <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-center">
-                <br/>
-                <h3 class="containerimagenes text-center">
-                    Soy Sol, es un gusto presentarme
-                </h3>
-                <br/>
-                <h5 class="mt-0">La guarda del Hotel</h5>
+                <h3 class="containerimagenes text-center">Soy Sol, es un gusto presentarme</h3>
+                <h5>La guarda del Hotel</h5>
                 <p>
                     Hola soy Sol, soy mitad salchicha y mitad beagle, tengo 5 años. ¡Será un gusto recibirlos! Si me necesitas 
                     nada más llamame y llegaré.
                 </p>
-                <br/>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Fragmento Blog Dinámico -->
+<div th:fragment="blogDinamico (blog)">
+    <div th:each="item : ${blog}" class="container d-flex justify-content-center mt-5">
+        <div class="row position-relative">
+            <!-- Imagen del blog -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img th:src="@{${item.imagenUrl}}" class="w-50 mb-5" alt="Imagen del blog"/>
+            </div>
+            <!-- Texto del blog -->
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-center">
+                <h3 class="containerimagenes text-center" th:text="${item.titulo}">Título</h3>
+                <h5 th:text="${item.descripcion}">Descripción</h5>
+                <p th:text="${item.contenido}">Contenido</p>
+
+                <!-- Botones de administración -->
+                <div sec:authorize="hasRole('ADMIN')" class="mt-2">
+                    <a th:href="@{/templates/blog/editar/{id}(id=${item.idBlog})}" class="btn btn-sm btn-warning">Editar</a>
+                    <a th:href="@{/templates/blog/eliminar/{id}(id=${item.idBlog})}" class="btn btn-sm btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario: Agregar nueva entrada -->
+    <div sec:authorize="hasRole('ADMIN')" class="container mt-5 mb-5">
+        <h4>Agregar Nueva Entrada</h4>
+        <form th:action="@{/templates/blog/agregar}" method="post">
+            <input type="text" name="titulo" placeholder="Título" class="form-control mb-2" required />
+            <input type="text" name="descripcion" placeholder="Descripción" class="form-control mb-2" required />
+            <input type="text" name="imagenUrl" placeholder="Ruta de la imagen" class="form-control mb-2" required />
+            <textarea name="contenido" placeholder="Contenido" class="form-control mb-2" rows="4" required></textarea>
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </form>
+    </div>
+
+    <!-- Formulario: Editar entrada -->
+    <div sec:authorize="hasRole('ADMIN')" class="container mt-5 mb-5" th:if="${blogEditado != null}">
+        <h4>Editar Entrada del Blog</h4>
+        <form th:action="@{/templates/blog/editar}" method="post">
+            <input type="hidden" name="idBlog" th:value="${blogEditado.idBlog}" />
+            <input type="text" name="titulo" th:value="${blogEditado.titulo}" placeholder="Título" class="form-control mb-2" required />
+            <input type="text" name="descripcion" th:value="${blogEditado.descripcion}" placeholder="Descripción" class="form-control mb-2" required />
+            <input type="text" name="imagenUrl" th:value="${blogEditado.imagenUrl}" placeholder="Ruta de imagen" class="form-control mb-2" required />
+            <textarea name="contenido" class="form-control mb-2" rows="4" th:text="${blogEditado.contenido}" placeholder="Contenido"></textarea>
+            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+            <a th:href="@{/templates/blog}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

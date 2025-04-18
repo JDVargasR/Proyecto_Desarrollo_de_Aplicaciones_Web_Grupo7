@@ -98,9 +98,12 @@ CREATE TABLE blog (
     titulo VARCHAR(255) NOT NULL,
     descripcion TEXT NOT NULL,
     contenido TEXT,
+    imagen_url VARCHAR(1024),
     activo BOOLEAN,
     PRIMARY KEY (id_blog)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4;
+
+
 
 CREATE TABLE contacto (
   id_contacto INT NOT NULL AUTO_INCREMENT,

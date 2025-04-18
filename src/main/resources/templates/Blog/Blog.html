@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="layout/plantilla :: head(~{::link})">
     <title>Proyecto - Grupo #7</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" th:href="@{/CSS/plantilla.css}"/>
 </head>
 <body>
-    <header th:replace="~{layout/plantilla :: header}"/>
+<header th:replace="~{layout/plantilla :: header}"/>
 
-    <section class="containerimagenes">
-        <h2>Blog</h2>
+<section class="containerimagenes">
+    <h2>BLOG</h2>
 
-        <section th:replace="~{Blog/fragmentos :: entradaEvangelia}"/>
-        <section th:replace="~{Blog/fragmentos :: entradaSol}"/>
-    </section>
+    <!-- Fragmentos estáticos -->
+    <section th:replace="~{Blog/fragmentos :: entradaEvangelia}"/>
+    <section th:replace="~{Blog/fragmentos :: entradaSol}"/>
 
-    <footer th:replace="~{layout/plantilla :: footer}"/>
+    <!-- Fragmento dinámico con el modelo incluido -->
+    <section th:replace="~{Blog/fragmentos :: blogDinamico(blog=${blog})}"/>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"/>
 </body>
 </html>

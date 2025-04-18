@@ -27,6 +27,8 @@ public class Blog implements Serializable{
     private String titulo;
     private String contenido;
 
+    private String imagenUrl;
+
     public Blog() {
     }
 
@@ -34,6 +36,18 @@ public class Blog implements Serializable{
         this.descripcion = descripcion;
         this.activo = activo;
     }
+
+    public Blog(boolean activo, String contenido, String descripcion, long idBlog, String imagenUrl, String titulo) {
+        this.activo = activo;
+        this.contenido = contenido;
+        this.descripcion = descripcion;
+        this.idBlog = idBlog;
+        this.imagenUrl = imagenUrl;
+        this.titulo = titulo;
+    }
+
+
+    
 
     public long getIdBlog() {
         return idBlog;
@@ -73,6 +87,14 @@ public class Blog implements Serializable{
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
     }
 
 
