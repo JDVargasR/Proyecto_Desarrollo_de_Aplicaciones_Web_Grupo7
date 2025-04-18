@@ -9,4 +9,6 @@ public class Proyecto_Grupo7Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Proyecto_Grupo7Application.class, args);
 	}
+
+
 }

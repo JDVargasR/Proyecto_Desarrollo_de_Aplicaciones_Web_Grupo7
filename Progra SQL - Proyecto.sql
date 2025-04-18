@@ -30,6 +30,7 @@ CREATE TABLE rol (
 
 /*creamos los roles disponibles*/
 INSERT INTO rol (id, nombre) VALUES (1, 'USER');
+INSERT INTO rol (id, nombre) VALUES (2, 'ADMIN');
 
 
 CREATE TABLE usuario_rol (
@@ -40,14 +41,27 @@ CREATE TABLE usuario_rol (
     PRIMARY KEY (usuario_id, rol_id)
 );
 
-/*creamos el usuario*/
 INSERT INTO usuario (nombre, correo, username, password)
-VALUES ('josue', 'prueba@email.com', 'josue', '$2a$10$Tpg.C9NcsxF1NnF6S4q3Wuw7OmMIGqPDbw6o.qQeE7SR9F3BWSz8m');
+VALUES (
+  'josue',
+  'prueba@email.com',
+  'josue',
+  '$2a$10$VIoJkkfq90y/HvS9e8QIf.tbVVDs/tMySqc0jrnj1nk14kVU9cA.O'
+);
+INSERT INTO usuario (nombre, correo, username, password)
+VALUES (
+'Administrador',
+ 'admin@email.com',
+ 'admin',
+ '$2a$10$qBvDo6aXcPUrQDFTh.5PXOEoUJ95C2.TCyqlNjMl8N0jJxtOBQlx2'
+ );
 
-/*le asignamos un rol a ese usuario*/
-INSERT INTO usuario_rol (usuario_id, rol_id) VALUES (1, 1);
-
-
+-- Le asignás el rol USER
+INSERT INTO usuario_rol (usuario_id, rol_id)
+VALUES (1, 1); -- Asumiendo que el usuario creado tiene ID = 1
+-- Le asignás el rol admin
+INSERT INTO usuario_rol (usuario_id, rol_id)
+VALUES (2, 2);
 --------------------------------------------------------------------
 
 
