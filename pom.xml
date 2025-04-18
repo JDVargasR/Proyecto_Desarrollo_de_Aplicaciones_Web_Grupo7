@@ -99,6 +99,9 @@
             <version>9.1.1</version>
         </dependency>
 
+
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -110,6 +113,11 @@
         </dependency>
 
 
+        <!-- Soporte para sec:authorize en vistas Thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+        </dependency>
 
     </dependencies>
 

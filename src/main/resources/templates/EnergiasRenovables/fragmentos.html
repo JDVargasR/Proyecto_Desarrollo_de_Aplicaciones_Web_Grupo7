@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head></head>
 <body>
 
@@ -12,6 +12,7 @@
 
         <br />
         <button class="btn-editar"
+                sec:authorize="hasRole('ADMIN')"
                 th:attr="data-id=${energia.id_energias_renovables},
                          data-titulo=${energia.titulo},
                          data-descripcion=${energia.descripcion},
@@ -20,8 +21,9 @@
             Editar
         </button>
 
-        <a th:href="@{/energias/eliminar/{id}(id=${energia.id_energias_renovables})}"
-           onclick="return confirm('¿Deseás eliminar esta energía?')">
+        <a  sec:authorize="hasRole('ADMIN')" 
+            th:href="@{/energias/eliminar/{id}(id=${energia.id_energias_renovables})}"
+            onclick="return confirm('¿Deseás eliminar esta energía?')">
             Eliminar
         </a>
         <hr />
@@ -29,7 +31,7 @@
 </section>
 
 <!-- Fragmento: Modal Agregar -->
-<section th:fragment="modalAgregar">
+<section th:fragment="modalAgregar"  sec:authorize="hasRole('ADMIN')">
     <div id="modalAgregar" class="modal">
         <div class="modal-contenido">
             <span class="modal-cerrar" onclick="cerrarModalAgregar()">&times;</span>

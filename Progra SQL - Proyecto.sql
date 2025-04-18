@@ -46,14 +46,14 @@ VALUES (
   'josue',
   'prueba@email.com',
   'josue',
-  '$2a$10$VIoJkkfq90y/HvS9e8QIf.tbVVDs/tMySqc0jrnj1nk14kVU9cA.O'
+  '$2a$10$xaaReEFEh8.ulnY5QIKwFeTnaWcLmY7Zc128wdKq3jcOjcer1Sf92'
 );
 INSERT INTO usuario (nombre, correo, username, password)
 VALUES (
 'Administrador',
  'admin@email.com',
  'admin',
- '$2a$10$qBvDo6aXcPUrQDFTh.5PXOEoUJ95C2.TCyqlNjMl8N0jJxtOBQlx2'
+ '$2a$10$xaaReEFEh8.ulnY5QIKwFeTnaWcLmY7Zc128wdKq3jcOjcer1Sf92'
  );
 
 -- Le asignás el rol USER

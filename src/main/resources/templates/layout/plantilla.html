@@ -30,7 +30,28 @@
                     <li><a th:href="@{/templates/imagenes}">Imágenes</a></li>
                 </ul>            
             </nav>
+
             <a class="boton" th:href="@{/templates/contacto}"><button>Contacto</button></a>
+       
+              <!-- MOSTRAR USUARIO ACTUAL (si está logueado) -->
+    <div sec:authorize="isAuthenticated()" style="color: white; margin-left: 20px;">
+        👤 Usuario: <strong><span sec:authentication="name"></span></strong>
+    </div>
+
+    <!-- BOTÓN CERRAR SESIÓN (solo si está autenticado) -->
+    <div sec:authorize="isAuthenticated()" style="margin-left: 20px;">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
+        </form>
+    </div>
+
+    <!-- BOTÓN INICIAR SESIÓN (solo si NO está autenticado) -->
+    <div sec:authorize="isAnonymous()" style="margin-left: 20px;">
+        <a th:href="@{/Login/Login}">
+            <button class="btn btn-outline-primary btn-sm">Iniciar sesión</button>
+        </a>
+    </div>
+       
         </header>
         
 

@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
 
 import com.Proyecto_Grupo7.service.impl.UserDetailsServiceImpl;
 
@@ -35,9 +36,9 @@ public class ProjectConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/Login/Login")                    // Página personalizada
-                        .loginProcessingUrl("/Login/Login")          // Donde se hace POST
-                        .defaultSuccessUrl("/index", true)           // A dónde va tras login correcto
+                        .loginPage("/Login/Login")
+                        .loginProcessingUrl("/Login/Login")
+                        .defaultSuccessUrl("/index", true)
                         .permitAll()
                 )
                 .logout(logout -> logout
@@ -55,11 +56,16 @@ public class ProjectConfig {
     @Bean
     public AuthenticationManager authenticationManager(
             HttpSecurity http, PasswordEncoder passwordEncoder) throws Exception {
-
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder)
                 .and()
                 .build();
+    }
+
+    // HABILITA sec:authorize EN THYMELEAF
+    @Bean
+    public SpringSecurityDialect springSecurityDialect() {
+        return new SpringSecurityDialect();
     }
 }
