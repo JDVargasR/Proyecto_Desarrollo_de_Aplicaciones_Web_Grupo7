@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,9 +32,10 @@ public class ContactoController {
     }
 
     @PostMapping("/guardar")
-    public String guardarContacto(@ModelAttribute Contacto contacto) {
+    public String guardarMensaje(Contacto contacto, Model model) {
         contactoService.guardarContacto(contacto);
-        return "redirect:/templates/contacto";
+        model.addAttribute("mensajeExito", "✅ ¡Mensaje enviado correctamente! Te contactaremos pronto.");
+        return "Contacto/contacto"; // Redirige a la misma vista
     }
 
     @GetMapping("/eliminar/{id}")

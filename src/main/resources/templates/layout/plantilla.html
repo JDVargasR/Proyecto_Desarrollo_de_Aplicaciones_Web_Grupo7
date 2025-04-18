@@ -38,6 +38,10 @@
         👤 Usuario: <strong><span sec:authentication="name"></span></strong>
     </div>
 
+    <li sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/admin/panel}">Panel Admin</a>
+    </li>
+
     <!-- BOTÓN CERRAR SESIÓN (solo si está autenticado) -->
     <div sec:authorize="isAuthenticated()" style="margin-left: 20px;">
         <form th:action="@{/logout}" method="post">

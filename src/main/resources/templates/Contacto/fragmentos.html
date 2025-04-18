@@ -28,7 +28,7 @@
 <section th:fragment="formularioContacto">
     <div class="contact-form">
         <h2>Envíanos tu Mensaje</h2>
-        <form th:action="@{/contacto/guardar}" method="POST">
+        <form th:action="@{/templates/contacto/guardar}" method="POST">
             <div class="form-field">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="nombre" placeholder="Tu nombre" required="required" />
@@ -53,6 +53,9 @@
         </form>
     </div>
 </section>
+<div th:if="${mensajeExito}" class="alert alert-success" style="margin-top: 20px;">
+    <p th:text="${mensajeExito}"></p>
+</div>
 
 </body>
 </html>

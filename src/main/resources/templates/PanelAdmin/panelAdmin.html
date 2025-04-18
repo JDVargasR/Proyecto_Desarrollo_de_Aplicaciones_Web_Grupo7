@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security6">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administrativo</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+    <style>
+        .admin-card {
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            background-color: #fefefe;
+            transition: transform 0.2s;
+        }
+
+        .admin-card:hover {
+            transform: scale(1.03);
+        }
+
+        .admin-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-icon {
+            font-size: 40px;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body class="container py-5">
+
+    <h2 class="admin-title">Panel de Administración</h2>
+
+    <div class="row g-4">
+
+        <!-- Gestión de Usuarios -->
+        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+            <div class="admin-card text-center">
+                <i class="fas fa-users admin-icon"></i>
+                <h4 class="mt-3">Usuarios</h4>
+                <p>Ver, editar y eliminar usuarios del sistema.</p>
+                <a th:href="@{/admin/usuarios}" class="btn btn-primary">Gestionar</a>
+            </div>
+        </div>
+
+        <!-- Gestión de Reservas -->
+        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+            <div class="admin-card text-center">
+                <i class="fas fa-calendar-check admin-icon"></i>
+                <h4 class="mt-3">Reservas</h4>
+                <p>Consultar y modificar las reservas realizadas.</p>
+                <a th:href="@{/admin/reservas}" class="btn btn-primary">Ver Reservas</a>
+            </div>
+        </div>
+
+        <!-- Gestión de Energías Renovables -->
+        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+            <div class="admin-card text-center">
+                <i class="fas fa-bolt admin-icon"></i>
+                <h4 class="mt-3">Energías</h4>
+                <p>Agregar, editar o eliminar entradas de energías renovables.</p>
+                <a th:href="@{/energias/lista}" class="btn btn-primary">Ir a Energías</a>
+            </div>
+        </div>
+
+        <!-- Gestión de Contactos -->
+<div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+    <div class="admin-card text-center">
+        <i class="fas fa-envelope admin-icon"></i>
+        <h4 class="mt-3">Mensajes</h4>
+        <p>Consultar mensajes enviados por usuarios.</p>
+        <a th:href="@{/admin/contactos}" class="btn btn-primary">Ver Mensajes</a>
+    </div>
+</div>
+
+        <!-- Reportes -->
+        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+            <div class="admin-card text-center">
+                <i class="fas fa-chart-bar admin-icon"></i>
+                <h4 class="mt-3">Reportes</h4>
+                <p>Ver estadísticas y reportes generales.</p>
+                <a th:href="@{/admin/reportes}" class="btn btn-primary">Ver Reportes</a>
+            </div>
+        </div>
+
+        <!-- Configuración -->
+        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+            <div class="admin-card text-center">
+                <i class="fas fa-cogs admin-icon"></i>
+                <h4 class="mt-3">Configuración</h4>
+                <p>Ajustes generales del sistema.</p>
+                <a th:href="@{/admin/configuracion}" class="btn btn-primary">Configurar</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

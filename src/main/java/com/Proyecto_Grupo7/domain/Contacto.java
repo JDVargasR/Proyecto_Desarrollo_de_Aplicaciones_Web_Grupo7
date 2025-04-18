@@ -5,6 +5,7 @@ package com.Proyecto_Grupo7.domain;
 
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import com.google.cloud.Timestamp;
 
@@ -35,8 +36,8 @@ public class Contacto implements Serializable{
 
     private boolean activo;
 
-    @Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Timestamp fecha_envio;
+    @Column(name = "fecha_envio", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime fechaEnvio;
 
     public Contacto() {
     }
@@ -49,7 +50,6 @@ public class Contacto implements Serializable{
         this.telefono = telefono;
         this.mensaje = mensaje;
         this.activo = activo;
-        this.fecha_envio = fecha_envio;
     }
 
 

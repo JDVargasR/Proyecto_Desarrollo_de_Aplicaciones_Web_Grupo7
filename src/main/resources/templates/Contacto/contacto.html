@@ -19,6 +19,12 @@
         </div>
     </section>
 
+    <div class="container mt-3" th:if="${mensajeExito}">
+        <div class="alert alert-success">
+            <p th:text="${mensajeExito}"></p>
+        </div>
+    </div>
+
     <footer th:replace="~{layout/plantilla :: footer}"/>
 </body>
 </html>
